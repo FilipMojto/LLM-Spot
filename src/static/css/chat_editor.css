@@ -1,0 +1,77 @@
+.chat-editor{
+	display: grid;
+	height: 100%;
+}
+
+
+.chat-panel{
+	background-color: rgb(58, 58, 58);
+	max-height: 99vh;
+	overflow-y: scroll;
+}
+
+.chat-item-left, .chat-item-right{
+	border-radius: 10px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	/* box-shadow: inset 2px -2px 3px rgb(136, 136, 136); */
+	margin: 15px 0;
+	position: relative;
+	word-wrap: break-word; /* Allow breaking of long words */
+    word-break: break-word; /* Ensure text wraps within container */
+}
+
+
+
+.chat-item-right{
+	box-shadow: inset -2px -2px 3px rgb(136, 136, 136);
+}
+
+.chat-item-left{
+	box-shadow: inset 2px -2px 3px rgb(136, 136, 136);
+}
+
+
+.chat-item-left::after, .chat-item-right::after {
+    position: absolute;
+    top: 50%;
+    right: -10px; /* Adjust the position slightly to align it with the edge */
+    transform: translateY(-50%); /* Center the triangle vertically */
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 20px 10px; /* Triangle pointing left */
+    border-color: transparent transparent transparent rgb(0, 0, 0); /* Match the background color of .chat-item */
+}
+
+.chat-item-right::after{
+	left: -10px;
+    transform: translateY(-50%) rotate(180deg); /* Center the triangle vertically */
+}
+
+#prompt-form{
+	height: 100%;
+	position: relative;
+	/* padding-right: 5px; */
+}
+
+#prompt-form > textarea{
+	height: calc(100% - 55px);
+	padding-right: 35px;
+	/* margin-bottom: 150px; */
+	padding-bottom: 10px;
+	resize: none;
+
+}
+
+#prompt-form #submit-icon {
+	position: absolute;
+	bottom: 0;
+	right: 15px;
+	cursor: pointer;
+}
+
+#prompt-form #submit-icon:hover{
+	transform: scale(1.1);
+}
