@@ -42,7 +42,7 @@ class OpenAIWrapper(LLM):
 				return False
 
 
-	def generate_text(self, command: str, model: str, context: str = LLM.DEF_CONTEXT):
+	def generate_text(self, command: str, model: str, max_tokens: int, temperature: float, context: str = LLM.DEF_CONTEXT):
 		completion = self.client.chat.completions.create(
 			model=model,
 			messages=[
@@ -51,7 +51,9 @@ class OpenAIWrapper(LLM):
 					"role": "user",
 					"content": command
 				}
-			]
+			],
+			max_tokens=max_tokens,
+			temperature=temperature
 		)
 
 		return Response(content=completion.choices[0].message.content,

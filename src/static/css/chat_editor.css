@@ -1,13 +1,50 @@
 .chat-editor{
 	display: grid;
-	height: 100%;
+	width: 100%;
+	overflow-y: hidden;
+
 }
 
+.chat-editor h2{
+	margin-top: 5px;
+}
 
 .chat-panel{
 	background-color: rgb(58, 58, 58);
-	max-height: 99vh;
+	/* max-height: 99vh; */
+	overflow-y: none;
+	overflow-x: none;
+}
+
+.chat-panel > div{
 	overflow-y: scroll;
+	overflow-x: hidden;
+	/* max-height: 90vh; */
+	max-height: 90vh;
+	border: 2px outset black;
+}
+
+.chat-panel > div::-webkit-scrollbar{
+	/* margin-right: 1px; */
+
+}
+
+.control-panel{
+	background-color: rgb(58, 58, 58);
+	/* max-width: 300px; */
+}
+
+.control-panel > .header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.control-panel > .header > img{
+	margin: 5px;
+	filter: invert(1);
+	cursor: pointer;
 }
 
 .chat-item-left, .chat-item-right{
@@ -24,11 +61,11 @@
 
 
 .chat-item-right{
-	box-shadow: inset -2px -2px 3px rgb(136, 136, 136);
+	box-shadow: inset -2px -2px 3px rgb(105, 105, 105);
 }
 
 .chat-item-left{
-	box-shadow: inset 2px -2px 3px rgb(136, 136, 136);
+	box-shadow: inset 2px -2px 3px rgb(105, 105, 105);
 }
 
 
@@ -53,25 +90,39 @@
 #prompt-form{
 	height: 100%;
 	position: relative;
+
+	/* background-color: red; */
 	/* padding-right: 5px; */
 }
 
 #prompt-form > textarea{
-	height: calc(100% - 55px);
-	padding-right: 35px;
+	height: 50%;
+	/* padding-left: 45px; */
 	/* margin-bottom: 150px; */
 	padding-bottom: 10px;
 	resize: none;
-
+	border-radius: 0;
 }
 
 #prompt-form #submit-icon {
-	position: absolute;
-	bottom: 0;
+	/* position: absolute; */
+	/* transform: translate(900%, -50px); */
+	/* transform: translateY(-50px); */
+	/* bottom: 35%; */
+	/* bottom: 250px; */
+	bottom: 40%;
 	right: 15px;
 	cursor: pointer;
 }
 
 #prompt-form #submit-icon:hover{
-	transform: scale(1.1);
+	transform: scale(1.05);
+	/* transform: translateY(-50px) scale(1.05); */
+}
+
+#prompt-form > .panel-controls{
+	background-color: white;
+	border: none;
+	border-color: white;
+	border-radius: 0 0 5px 5px;
 }

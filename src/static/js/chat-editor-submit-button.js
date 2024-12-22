@@ -6,11 +6,11 @@ document.getElementById("submit-icon").addEventListener("click", () => {
         const chatPanel = document.querySelector(".chat-panel");
 
         // Create a new chat-item div
-        const newChatItem = document.createElement("div");
+        const newChatItem = chatPanel.createElement("div");
         newChatItem.className = "container-fluid chat-item-left";
 
         // Create a label to hold the message text
-        const messageLabel = document.createElement("label");
+        const messageLabel = chatPanel.createElement("label");
         messageLabel.className = "message-text m-3";
         messageLabel.textContent = prompt;
 
