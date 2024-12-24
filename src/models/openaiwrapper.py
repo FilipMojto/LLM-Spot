@@ -4,6 +4,7 @@ from models.base import LLM, Response
 
 
 class OpenAIWrapper(LLM):
+	MODELS = ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo', 'dall-e-3']
 
 	def __init__(self, api_key: str, verify_key: bool = True):
 		super().__init__()
@@ -56,7 +57,7 @@ class OpenAIWrapper(LLM):
 			temperature=temperature
 		)
 
-		return Response(content=completion.choices[0].message.content,
+		return Response(text_content=completion.choices[0].message.content,
 				  		role=completion.choices[0].message.role,
 						model=model)
 	

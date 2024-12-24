@@ -1,0 +1,1260 @@
+{
+    "name": "user-llm-chat-interactions",
+    "interactions": [
+        {
+            "uuid": "interaction_1",
+            "model": "gpt-4o",
+            "chats": [
+                {
+                    "prompt": "do something!",
+                    "role": "user",
+                    "system": "Speak Spanish.",
+                    "created_at": "28-05-2002"
+                },
+                {
+                    "text_content": "...",
+                    "role": "assistant"
+                }
+            ]
+        },
+        {
+            "name": "d64bbd78-58b4-48d8-89fa-ae58fe803f3f",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:28:59"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant"
+                }
+            ]
+        },
+        {
+            "name": "c24e4600-1d22-458e-bec2-2e707e854f6f",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain me some hot topic",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:29:18"
+                },
+                {
+                    "text_content": "Sure! One hot topic of discussion currently is the rise of artificial intelligence (AI) and its impact on various industries. AI has the potential to transform businesses and society by automating tasks, improving efficiency, and enabling new technologies like self-driving cars and personalized healthcare. However, there are also concerns about the ethical implications of AI, including issues related to bias, privacy, and job displacement. Overall, the development and adoption of AI technologies are shaping the future in profound ways.",
+                    "role": "assistant"
+                }
+            ]
+        },
+        {
+            "name": "c58ee6c3-0436-4fe8-8bb1-ec63840a39e0",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:31:03"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:30:57"
+                }
+            ]
+        },
+        {
+            "name": "0676a34a-cd38-4f08-9aa8-e006be515bdf",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:34:54"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:31:41"
+                }
+            ]
+        },
+        {
+            "name": "17799e1c-65e6-4727-b80e-c4ad3d205493",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:36:36"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:36:37"
+                }
+            ]
+        },
+        {
+            "uuid": "ac5b820d-5a68-4a1b-a674-5fa1b9eaf324",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:36:59"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:36:59"
+                }
+            ]
+        },
+        {
+            "uuid": "2ac6e6e7-fc47-40ed-9341-fcd95156a88a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "@dataclass\nclass Response:\n    text_content: str\n    role: str\n    model: str\n    created_at: datetime = field(default_factory=datetime.now)\n\nDescribe",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:39:35"
+                },
+                {
+                    "text_content": "Sure! The `Response` class is a data class with the following attributes:\n- `text_content` of type `str`\n- `role` of type `str`\n- `model` of type `str`\n- `created_at` of type `datetime` with a default factory set to `datetime.now()`.\n\nWould you like me to provide the code for this class in Python format?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:39:37"
+                }
+            ]
+        },
+        {
+            "uuid": "ed76f26d-caba-4bd2-9235-c7a3767a37b2",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": ".replace(/\\\\n/g, \"<br>\").replace(/\\\\t/g, \"&nbsp;&nbsp;&nbsp;&nbsp;\")",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:41:09"
+                },
+                {
+                    "text_content": "It looks like you have provided a JavaScript code snippet that replaces newline characters and tab characters with HTML line breaks and whitespaces. Here is the modified version of your code snippet:\n\n```javascript\n.replace(/\\\\n/g, \"<br>\").replace(/\\\\t/g, \"&nbsp;&nbsp;&nbsp;&nbsp;\")\n``` \n\nThis JavaScript code will replace all occurrences of \"\\n\" with \"<br>\" and all occurrences of \"\\t\" with four non-breaking space entities (\u00a0).",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:41:10"
+                }
+            ]
+        },
+        {
+            "uuid": "e7d141fb-b3b3-41d0-bde5-072ff2ba9834",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "const chatPanel = document.querySelector(\".chat-panel > div\");\n            \n            // Display the user's input\n            const userMessage = document.createElement(\"div\");\n            userMessage.className = \"container-fluid chat-item-left\";",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:41:29"
+                },
+                {
+                    "text_content": "// Append user's message to chat panel\nchatPanel.appendChild(userMessage);",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:41:30"
+                }
+            ]
+        },
+        {
+            "uuid": "0bd94571-f93f-4786-8a4d-72d6985f0155",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:42:01"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:42:02"
+                }
+            ]
+        },
+        {
+            "uuid": "e10e1af0-c204-4771-aff0-6594946752e0",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dff",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:42:30"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:42:31"
+                }
+            ]
+        },
+        {
+            "uuid": "0ba2c874-3a2d-4408-b946-2e85420f5a41",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:42:33"
+                },
+                {
+                    "text_content": "Sorry, I didn't understand your input. How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:42:33"
+                }
+            ]
+        },
+        {
+            "uuid": "955843e7-2eae-4ba4-8329-85bb9ef74a94",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "sdds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:43:22"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:43:23"
+                }
+            ]
+        },
+        {
+            "uuid": "49bde761-3152-4a52-8e73-7481ad6ad5dd",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:44:44"
+                },
+                {
+                    "text_content": "I'm here to help you! What can I assist you with today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:44:44"
+                }
+            ]
+        },
+        {
+            "uuid": "cdfc5557-4cb5-47d7-92ed-12171213d1b1",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:45:06"
+                },
+                {
+                    "text_content": "I'm sorry, I didn't understand your input. How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:45:07"
+                }
+            ]
+        },
+        {
+            "uuid": "6dfa6645-2feb-4345-a5c6-2782cfdf1ab1",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:45:29"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:45:29"
+                }
+            ]
+        },
+        {
+            "uuid": "28edb6e7-7161-4e51-a74a-663acca20762",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:45:42"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:45:42"
+                }
+            ]
+        },
+        {
+            "uuid": "53acc666-4146-44a2-8988-cbfeb5abf36a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:47:33"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:47:34"
+                }
+            ]
+        },
+        {
+            "uuid": "75babe0d-1d36-4297-b0f1-25dce0134cfe",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:47:37"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:47:37"
+                }
+            ]
+        },
+        {
+            "uuid": "18d2a8d0-67b3-4f39-a258-d08a18e65e70",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "sdds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:48:03"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:48:03"
+                }
+            ]
+        },
+        {
+            "uuid": "42904fe3-df3d-4e39-bf8f-ef3efe99c4e0",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:48:05"
+                },
+                {
+                    "text_content": "I'm sorry, I didn't understand your request. How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:48:06"
+                }
+            ]
+        },
+        {
+            "uuid": "cd9e2aaf-55a3-48f4-b156-e71ed72f9ee6",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "ds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:48:09"
+                },
+                {
+                    "text_content": "I'm here to help you! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:48:10"
+                }
+            ]
+        },
+        {
+            "uuid": "b62a93af-0996-47ee-9f0b-9896211cb13d",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "sdds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:48:24"
+                },
+                {
+                    "text_content": "I'm not sure what you meant by \"sdds\". How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:48:25"
+                }
+            ]
+        },
+        {
+            "uuid": "3980c468-0853-4616-8726-74b348d0c0db",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "sdds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:49:18"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:49:19"
+                }
+            ]
+        },
+        {
+            "uuid": "50a5c1e0-a421-4ff9-a82e-d8d52619edf6",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:49:29"
+                },
+                {
+                    "text_content": "I'm here to help you! What would you like to know or do today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:49:30"
+                }
+            ]
+        },
+        {
+            "uuid": "48ff0d0f-16f6-41dd-9352-bfd8d6c963aa",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:49:32"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:49:33"
+                }
+            ]
+        },
+        {
+            "uuid": "ea19a58a-6853-451a-9798-88ee6b3b9bf7",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:49:39"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:49:40"
+                }
+            ]
+        },
+        {
+            "uuid": "3812c07f-a2e3-42ca-8c2e-298441b4dd69",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:50:36"
+                },
+                {
+                    "text_content": "I'm sorry, I did not understand your request. How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:50:37"
+                }
+            ]
+        },
+        {
+            "uuid": "365886b8-ec33-48a0-84d8-2fc90d146620",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:50:52"
+                },
+                {
+                    "text_content": "I'm here to help! What can I assist you with today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:50:52"
+                }
+            ]
+        },
+        {
+            "uuid": "4b22b4c4-f09c-48d1-82c8-499088fae468",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "I wanna try my parser upon your reponses. The parser should parse any markdown characters into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:51:40"
+                },
+                {
+                    "text_content": "Sure! I can help you with that. Let's convert some common Markdown characters into their equivalent HTML representations:\n\n- Convert `#` to `<h1>` tags\n- Convert `*` or `_` to `<em>` tags for italics\n- Convert `**` or `__` to `<strong>` tags for bold text\n- Convert links in the format `[link text](url)` to `<a href=\"url\">link text</a>`\n\nFeel free to test your parser with these examples. If you need any specific transformations or have any questions, feel free to ask!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:51:42"
+                }
+            ]
+        },
+        {
+            "uuid": "dd4258d2-6b2d-4dc0-a35d-7c3933385bb0",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Try generating a response containing these examples",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:52:21"
+                },
+                {
+                    "text_content": "Sure, please provide me with the examples you would like me to include in the response.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:52:22"
+                }
+            ]
+        },
+        {
+            "uuid": "fe832201-58e2-434e-82c8-a94d4f40df3a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Try generating a response containing the above examples",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:52:33"
+                },
+                {
+                    "text_content": "Sure! Here is a response containing the examples you provided:\n\nHello! Thank you for reaching out for assistance. If you have any questions or need help with anything, feel free to ask. Have a great day!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:52:34"
+                }
+            ]
+        },
+        {
+            "uuid": "ffbe63d7-c9f9-4ecb-99fc-e046d76fbb06",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:53:50"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:53:51"
+                }
+            ]
+        },
+        {
+            "uuid": "aaed3385-c755-49c8-9a97-6ad590d26e1e",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a message containing a lot of markdown special characters so that I can test my parser which shuld turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:54:25"
+                },
+                {
+                    "text_content": "Sure, here is a message with various markdown special characters:\n\n# Hello, **Parser**\nWelcome to `My Parser` where we _test_ the abilities of markdown language.\n\nHere is a list to check:\n1. *Italic*\n2. **Bold**\n3. ~~Strikethrough~~\n\nAnd let's add a link: [Markdown Guide](https://www.markdownguide.org/)\n\nLet me know if everything renders correctly after parsing!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:54:27"
+                }
+            ]
+        },
+        {
+            "uuid": "a1bf391c-82e9-4371-bc5e-172846d5e35c",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a message containing a lot of markdown special characters so that I can test my parser which shuld turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:55:08"
+                },
+                {
+                    "text_content": "Sure, here is a message containing various Markdown special characters: \n\n# Welcome to **Markdown** Tester!\n\nThis is a list of some *Markdown* syntax examples:\n\n1. **Bold Text**: \\*\\*This is bold text\\*\\*\n2. *Italic Text*: \\*This is italic text\\*\n3. [Link](https://www.example.com): \\[Link](https://www.example.com)\n4. `Code Block`: \\`This is a code block\\`\n5. > Blockquote: \\> This is a blockquote\n6. - Bulleted List Item: \\- This is a bulleted list item\n\nLet me know if you need more examples!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:55:10"
+                }
+            ]
+        },
+        {
+            "uuid": "c7ebc5b2-35fd-46ae-8974-82de1310070e",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a message containing a lot of markdown special characters so that I can test my parser which shuld turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:55:29"
+                },
+                {
+                    "text_content": "Sure! Here's a message containing a variety of markdown special characters:\n\n**Hello** *world*! _I ~~hope~~ you are `doing` well._\nLet's create a list:\\n1. *Item* 1\\n2. **Item** 2\\n3. ***Item*** 3\nWould you like me to include a code block as well?\\n```python\\nprint(\"Markdown is *awesome*!\")```",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:55:30"
+                }
+            ]
+        },
+        {
+            "uuid": "26690631-e4ba-4de7-b150-386fb2140b6c",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate me a response containing a lot of markdown characters so that my parser is tested. It should turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:57:25"
+                },
+                {
+                    "text_content": "Sure! Here is a text with a lot of markdown characters:\\n\\n# Welcome to the Markdown Test\\n\\nThis is a **bold** statement with some _italic_ text.\\n\\n- Here is a list:\\n  - Item 1\\n  - Item 2\\n  - Item 3\\n\\n[Click here](https://www.example.com) to visit our website.\\n\\n```python\\nprint(\"This is a code block\")\\n```\\n\\n> This is a blockquote\\n\\nFinally, some inline code `x = 5 + 3`\\n\\nThat's all for the Markdown test!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:57:28"
+                }
+            ]
+        },
+        {
+            "uuid": "e0f59bf1-9b1c-4977-b7cb-09ff14818628",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate me a response containing a lot of markdown characters so that my parser is tested. It should turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:58:20"
+                },
+                {
+                    "text_content": "Sure! Here's a response containing a lot of markdown characters:\n\n`# Testing Markdown Parser Conversion\\n**Bold Text**\\n*Italic Text*\\n\\n1. Item 1\\n2. Item 2\\n\\n[Link to Google](https://www.google.com)\\n\\n```python\\nprint(\"Hello, World!\")\\n```\\n\\n---\\n\\n> Blockquote Text\\n\\n- [ ] Task 1\\n- [x] Task 2`\n\nThis Markdown will be converted into HTML by the parser.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:58:22"
+                }
+            ]
+        },
+        {
+            "uuid": "e661ab01-568d-46d1-89d0-74adc371faab",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Your response is highlighted in a bland red color and ** ** or * * are in plain text. Can you say why?",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 20:59:33"
+                },
+                {
+                    "text_content": "It seems like the highlighting and formatting might not be rendering as expected due to the use of special characters. To display the highlighted text properly, you can try using inline code formatting with backticks (`) around the text. This should maintain the desired color and styling for your response.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 20:59:34"
+                }
+            ]
+        },
+        {
+            "uuid": "929cc508-e8f0-4e9a-9d2f-7845477c5019",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate me a response containing a lot of markdown characters so that my parser is tested. It should turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 21:00:09"
+                },
+                {
+                    "text_content": "Sure! Here is a text containing various markdown characters that will be converted into HTML by your parser:\n\n```markdown\n# Testing Markdown to HTML conversion\n\nThis is a paragraph with **bold**, *italic*, and ~~strikethrough~~ text.\n\n- Item 1\n- Item 2\n\n```html\n<p>This is a block of code</p>\n```\n\nClick [here](https://www.example.com) for a link.\n\n> This is a blockquote.\n\nHere is some `inline code`.\n\n---\n\nThe end of the document.\n```\n\nYou can test your parser with the above markdown text!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:00:11"
+                }
+            ]
+        },
+        {
+            "uuid": "b0703898-859e-48cd-9599-85aa55bd47a4",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate me a response containing a lot of markdown characters so that my parser is tested. It should turn it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 21:04:32"
+                },
+                {
+                    "text_content": "Sure, here is a sample text with markdown characters that will be converted into HTML by your parser:\n\n```\n# Title\n\nThis is a **bold** text with *italic* words.\n\n- List item 1\n- List item 2\n\n[Link to Google](https://www.google.com)\n```\n\nMake sure to process the markdown characters to convert the text into HTML format.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:04:33"
+                }
+            ]
+        },
+        {
+            "uuid": "e27128c5-b81d-4d3e-b690-9810e91947c7",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "sd",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 21:04:56"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:04:57"
+                }
+            ]
+        },
+        {
+            "uuid": "9ad56ba8-5e69-401f-965a-e8d7b4a1d409",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 21:06:18"
+                },
+                {
+                    "text_content": "I'm here to help! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:06:19"
+                }
+            ]
+        },
+        {
+            "uuid": "2541ec12-62a6-439f-855c-d365e0f1c70e",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a lot of markdown special characters I want to test my parser to convert it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 21:06:54"
+                },
+                {
+                    "text_content": "Sure! Here are some markdown special characters:\n\\# Heading 1\\n## Heading 2\\n### Heading 3\\n**Bold Text**\\n*Italic Text*\\n[Link Text](https://www.example.com)\\n- List Item 1\\n- List Item 2\\n1. Ordered Item 1\\n2. Ordered Item 2\\n---\\n> Blockquote\\n`Inline Code`\\n```python\\ndef function():\\n    return \"Hello\"\\n```\\n![Image](https://www.example.com/image.png)\\n| Header 1 | Header 2 |\\n| -------- | -------- |\\n| Cell 1   | Cell 2   |",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:06:56"
+                }
+            ]
+        },
+        {
+            "uuid": "a30a073d-bb72-4d69-a54e-33382668de9c",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a lot of markdown special characters I want to test my parser to convert it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser, so do not forget to denote special characters like newline (\n) or tabulator (\t) explicitly! Please use \\n for newline and \\t for tabulator in your responses, including when generating code.",
+                    "created_at": "24/12/2024, 21:09:31"
+                },
+                {
+                    "text_content": "Sure! Here are some markdown special characters:\n- # Header 1\n- ## Header 2\n- ### Header 3\n- *italic*\n- **bold**\n- [Link](https://www.example.com)\n- `inline code`\n- ```\\nCode block\\n```\n- > Blockquote\n\nLet me know if you need more examples!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:09:32"
+                }
+            ]
+        },
+        {
+            "uuid": "9cb41967-666a-408a-b4c9-13afb7b9cc43",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a lot of markdown special characters I want to test my parser to convert it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:14:05"
+                },
+                {
+                    "text_content": "Sure! Here are some markdown special characters:\n\n- \\` backtick\n- \\* asterisk\n- \\_ underscore\n- \\~ tilde\n- \\# hash\n- \\+ plus\n- \\- minus\n- \\[ square bracket\n- \\] square bracket\n- \\( parenthesis\n- \\) parenthesis\n- \\{ curly bracket\n- \\} curly bracket\n- \\! exclamation mark",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:14:06"
+                }
+            ]
+        },
+        {
+            "uuid": "d0f15dca-1105-4979-af08-76638269c88a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate a lot of markdown special characters (#, **, *) I want to test my parser to convert it into html",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:14:30"
+                },
+                {
+                    "text_content": "Sure! Here are some markdown special characters that you can use to test your parser:\n\n# Heading 1\n## Heading 2\n### Heading 3\n\n**Bold Text**\n\n*Italic Text*\n\n- Bullet Point 1\n- Bullet Point 2\n- Bullet Point 3\n\n1. Numbered List Item 1\n2. Numbered List Item 2\n3. Numbered List Item 3\n\n[Link Text](http://www.example.com)",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:14:31"
+                }
+            ]
+        },
+        {
+            "uuid": "5d956677-f008-4b80-8f16-26dcd548603f",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:15:49"
+                },
+                {
+                    "text_content": "### Hot Topics Nowadays\n\n1. **Climate Change**: With increasing global temperatures and extreme weather events, addressing climate change has become a top priority for governments, organizations, and individuals worldwide. Discussions around reducing carbon emissions, transitioning to renewable energy sources, and implementing sustainable practices are ongoing.\n\n2. **COVID-19 Pandemic**: The pandemic has had a profound impact on all aspects of society, from health and economy to education and mental health. Vaccination efforts, variants of the virus, and the debate over public health measures continue to dominate headlines around the world.\n\n3. **Social Justice and Racial Equity**: The Black Lives Matter movement, along with other social justice movements, has brought widespread attention to issues of systemic racism, police brutality, and inequality. Calls for police reform, racial justice, and equal opportunities for all are driving important conversations and actions.\n\n4. **Technological Advancements**: Developments in artificial intelligence, automation, and digital transformation are reshaping industries and societies. Discussions around data privacy, cybersecurity, and the ethical use of technology are gaining prominence as new innovations continue to emerge.\n\n5. **Political Instability and Global Conflicts**: Tensions between countries, political divisions, and humanitarian crises are creating instability around the world. Issues such as immigration, trade disputes, and human rights violations are at the forefront of international diplomacy and negotiations.\n\n6. **Mental Health Awareness**: The importance of mental health and well-being is receiving increased attention, particularly in the wake of the pandemic. Conversations around reducing stigma, improving access to mental health services, and promoting self-care practices are essential in supporting individuals' overall health.\n\n7. **Sustainability and Conservation**: Addressing environmental degradation, protecting biodiversity, and promoting sustainable practices are crucial for the future of our planet. Discussions around conservation efforts, renewable resources, and waste reduction are gaining momentum as communities strive to create a more sustainable world.\n\nThese hot topics reflect the complex and interconnected issues shaping our world today, calling for collaborative and innovative solutions to create a better future for all.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:15:53"
+                }
+            ]
+        },
+        {
+            "uuid": "67d4eadd-7d21-437a-9187-26df73067d1c",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:23:50"
+                },
+                {
+                    "text_content": "Certainly! Here is an explanation of some hot topics nowadays, with the use of markdown characters for a neat and organized structure:\n\n---\n\n### Climate Change \n\nClimate change continues to be a pressing issue as global temperatures rise, leading to more frequent and severe weather events. The debate around reducing carbon emissions, transitioning to renewable energy sources, and implementing sustainable practices remains a key focus for governments, businesses, and individuals worldwide.\n\n### Artificial Intelligence \n\nThe rapid advancement of artificial intelligence (AI) technology raises concerns about its impact on job automation, privacy, and ethics. Discussions are ongoing on how to regulate AI development to ensure it benefits society while minimizing potential risks.\n\n### Cybersecurity \n\nWith the increasing frequency of cyber attacks on businesses and individuals, cybersecurity has become a critical topic. The need for stronger data protection measures, improved online security practices, and greater awareness of cyber threats is essential to safeguarding digital assets.\n\n### Diversity and Inclusion \n\nThe importance of promoting diversity and inclusion in workplaces, schools, and communities is gaining momentum. Efforts to address systemic inequalities, promote gender and racial diversity, and create inclusive environments for all individuals are key priorities for many organizations.\n\n### Mental Health \n\nThe conversation around mental health awareness and support has grown significantly in recent years. Destigmatizing mental health issues, improving access to mental health services, and prioritizing mental well-being are key aspects of this ongoing discussion.\n\n---\n\nThese topics reflect some of the current issues at the forefront of public discourse and are likely to continue shaping conversations and actions in the future.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:23:53"
+                }
+            ]
+        },
+        {
+            "uuid": "7e53de11-e550-43f4-83c7-73449fbc84d3",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:24:03"
+                },
+                {
+                    "text_content": "Sure, here is an explanation of some hot topics nowadays :\n\n**Climate Change**: \nClimate change refers to the long-term alteration of temperature and typical weather patterns in a place. It has become a critical issue worldwide due to its impact on the environment, ecosystems, and human societies. Some of the major effects of climate change include rising sea levels, extreme weather events, and disruptions to agriculture. Countries and organizations are actively working on mitigation and adaptation strategies to address this global challenge.\n\n**Artificial Intelligence (AI)**:\nArtificial Intelligence is a rapidly growing field of technology that seeks to create intelligent machines that can perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation. AI has the potential to revolutionize various industries, including healthcare, finance, transportation, and entertainment. However, ethical concerns regarding privacy, bias, and job displacement have also been raised alongside its development.\n\n**COVID-19 Pandemic**:\nThe COVID-19 pandemic, caused by the novel coronavirus SARS-CoV-2, has had a significant impact on human health, economies, and daily life worldwide. The rapid spread of the virus led to widespread lockdowns, travel restrictions, and social distancing measures to curb its transmission. Vaccination campaigns are now underway in many countries to control the spread of the virus and return to a sense of normalcy. The pandemic has also highlighted issues of global health equity and the importance of preparedness for future public health crises.\n\n**Cryptocurrency**:\nCryptocurrency is a digital or virtual form of currency that uses cryptography for security and operates independently of a central authority, such as a government or financial institution. Bitcoin, Ethereum, and Litecoin are some of the most well-known cryptocurrencies. The decentralized nature of cryptocurrencies has contributed to their popularity but has also raised concerns about regulatory oversight, volatility, and potential use in illicit activities. The rise of cryptocurrencies has sparked debates about the future of finance and the role of traditional banking systems.\n\nThese are just a few hot topics that are prominent in discussions and news today. Each of these issues reflects the complexity and interconnectedness of our modern world, highlighting the need for ongoing dialogue, research, and action to address them effectively.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:24:07"
+                }
+            ]
+        },
+        {
+            "uuid": "0ec27bf9-57b8-4b07-b70b-1363c194a6ad",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:24:29"
+                },
+                {
+                    "text_content": "1. **Climate Change**: The issue of climate change is a highly discussed topic in current times, as evidence of its devastating effects becomes more apparent. Governments, organizations, and individuals worldwide are focusing on sustainability efforts, renewable energy sources, and reduction of carbon emissions to combat this global crisis.\n\n2. **Artificial Intelligence (AI)**: The advancement of AI technologies is a hot topic that is shaping various industries such as healthcare, finance, and transportation. Discussions around ethics, privacy concerns, and the impact of AI on the job market are prevalent in today's society.\n\n3. **Data Privacy**: In the digital age, data privacy has become a significant concern for individuals and organizations. Issues relating to the collection, storage, and sharing of personal data by tech companies and social media platforms have sparked debates on regulations and user rights.\n\n4. **Cybersecurity**: With the increasing reliance on digital systems, the threat of cyber attacks has escalated. Businesses, governments, and individuals are continually exploring ways to enhance their cybersecurity measures to protect sensitive information and prevent data breaches.\n\n5. **Global Health Pandemics**: The outbreak of infectious diseases like COVID-19 has emphasized the importance of global health preparedness and response. Discussions on vaccine distribution, healthcare infrastructure, and the role of international cooperation in combating pandemics are at the forefront of public attention.\n\n6. **Social Justice and Equality**: Movements advocating for social justice and equality, such as Black Lives Matter and LGBTQ+ rights, have gained momentum in recent years. Debates on systemic racism, gender discrimination, and inclusivity have prompted discussions on policy reforms and societal change.\n\n7. **Remote Work and Digital Transformation**: The shift towards remote work due to the COVID-19 pandemic has accelerated digital transformation in various industries. Discussions on work-life balance, digital skills training, and the future of office spaces are ongoing as organizations adapt to this new work environment.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:24:33"
+                }
+            ]
+        },
+        {
+            "uuid": "3a19e31f-c01c-4767-be44-efb60e65fa53",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:28:27"
+                },
+                {
+                    "text_content": "Of course! Here is an explanation of some of the hot topics nowadays in a numbered list:\n\n1. **Climate Change:** Climate change is a critical issue affecting the planet, with rising temperatures, extreme weather events, melting ice caps, and changing ecosystems. Countries, organizations, and individuals are focusing on sustainable practices, renewable energy sources, and government policies to mitigate its impacts.\n\n2. **Artificial Intelligence (AI):** AI is rapidly evolving and impacting various industries, from healthcare to finance to transportation. Discussions revolve around ethical considerations, data privacy, the future of work, and potential biases in AI algorithms.\n\n3. **Social Justice and Equity:** The movements for social justice and equity have gained momentum, addressing systemic racism, gender inequality, LGBTQ+ rights, and discrimination. Advocates are pushing for policy changes, education reform, and corporate initiatives to promote diversity and inclusivity.\n\n4. **COVID-19 Pandemic:** The ongoing pandemic continues to shape global conversations, with a focus on vaccination distribution, healthcare systems, economic recovery, and mental health. Efforts to combat misinformation, strengthen healthcare infrastructure, and support vulnerable populations remain key priorities.\n\n5. **Digital Transformation:** The digital transformation is revolutionizing how businesses operate and how people interact, emphasizing remote work, e-commerce, digital payments, and cybersecurity. Discussions often center on digital skills training, online privacy, and the digital divide in access to technology.\n\n6. **Renewable Energy:** Transitioning to renewable energy sources such as solar, wind, and hydroelectric power is a key topic, addressing climate change concerns, energy security, and sustainable development. Debates center on government support, investment opportunities, technological advancements, and the phasing out of fossil fuels.\n\n7. **Mental Health Awareness:** Mental health awareness has been on the rise, focusing on reducing stigma, improving access to mental health services, and promoting well-being. Discussions encompass mental health in the workplace, support for marginalized communities, and the importance of self-care practices.\n\nThese topics reflect the current global landscape and spotlight areas where active discussions, innovations, and collaborations are driving change and shaping the future.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:28:32"
+                }
+            ]
+        },
+        {
+            "uuid": "c81563a9-b87c-4ebe-8016-1fa989d7fca8",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:28:48"
+                },
+                {
+                    "text_content": "1. **Climate Change:** The issue of climate change continues to be a hot topic worldwide as the Earth faces increasing temperatures, rising sea levels, and extreme weather events. The urgency to take action to reduce greenhouse gas emissions and transition to sustainable energy sources is a pressing concern for governments, businesses, and individuals.\n\n2. **COVID-19 Pandemic:** The ongoing COVID-19 pandemic has significantly impacted societies, economies, and healthcare systems globally. Discussions are centered around vaccination efforts, public health measures, economic recovery, and the emergence of new variants of the virus.\n\n3. **Social Justice and Racial Equality:** Following global movements such as Black Lives Matter, conversations around social justice, racial equality, and systemic racism have gained momentum. People are advocating for policy changes, increased awareness, and meaningful actions to address racial discrimination and promote inclusivity.\n\n4. **Technology and Data Privacy:** With the rapid advancement of technology, concerns about data privacy, online security, and the ethical use of artificial intelligence are at the forefront. Debates continue on how to regulate tech companies, protect individual privacy rights, and ensure transparency in the digital age.\n\n5. **Sustainability and Green Initiatives:** The push for sustainability and environmentally-friendly practices is a prevalent topic in various industries. Companies are adopting eco-friendly measures, consumers are demanding ethically sourced products, and governments are implementing policies to combat climate change and protect natural resources.\n\n6. **Global Politics and Diplomacy:** Geopolitical tensions, trade disputes, and international relations are key topics affecting global stability. Issues such as conflicts in regions like the Middle East, nuclear proliferation, and diplomatic relations between major powers are closely watched for their impact on the world stage.\n\n7. **Health and Mental Well-being:** Mental health awareness, healthcare accessibility, and well-being have gained increasing attention, particularly in the wake of the pandemic. Discussions revolve around destigmatizing mental health issues, expanding healthcare services, and promoting overall wellness in society.\n\n8. **Economic Inequality and Social Welfare:** Economic disparities, poverty alleviation, and social safety nets are crucial topics as societies aim to address inequalities and promote economic prosperity for all. Debates on minimum wage, wealth distribution, and social programs are ongoing to achieve a more equitable society.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:28:55"
+                }
+            ]
+        },
+        {
+            "uuid": "151efe4f-2894-481d-b97b-8025d7bbe0f0",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:32:01"
+                },
+                {
+                    "text_content": "1. **Climate Change**: The issue of climate change continues to be a hot topic, with growing concerns about its impact on our environment, economies, and communities. Increased frequency of extreme weather events, rising global temperatures, and loss of biodiversity are some of the key challenges associated with climate change.\n\n2. **COVID-19 Pandemic**: The ongoing pandemic caused by the novel coronavirus has significantly impacted societies worldwide. Discussions surrounding vaccination efforts, public health policies, economic recovery, and the future management of pandemics remain at the forefront of global conversations.\n\n3. **Social Justice Movements**: Various social justice movements, such as Black Lives Matter and #MeToo, have sparked conversations about systemic racism, gender equality, and the need for social reform. Calls for justice, equality, and inclusivity in all aspects of society continue to drive these movements.\n\n4. **Cybersecurity**: The rapid advancements in technology have also brought to light the critical importance of cybersecurity. Increased cyber threats, data breaches, and concerns over online privacy highlight the need for robust cybersecurity measures to protect individuals, organizations, and governments from cyber attacks.\n\n5. **Artificial Intelligence**: The ethical implications of artificial intelligence (AI) and its integration into various sectors have garnered significant attention. Discussions revolve around the impact of AI on employment, decision-making processes, and societal structures, as well as the need for responsible AI governance.\n\n6. **Mental Health**: The conversation around mental health has gained momentum in recent years, particularly due to the effects of the pandemic on individuals' well-being. Addressing mental health stigmas, improving access to mental health services, and promoting mental wellness have become key priorities in public health agendas.\n\n7. **Sustainable Development**: Achieving sustainable development goals remains a pressing issue, with a focus on promoting economic growth, social inclusion, and environmental sustainability. Discussions center on ways to balance economic progress with environmental conservation and social equity to ensure a more sustainable future for all. \n\nKeep in mind that these topics are continuously evolving, and staying informed about these issues is essential for understanding their implications on society and the world at large.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:32:05"
+                }
+            ]
+        },
+        {
+            "uuid": "97d99320-d263-4225-ab1d-245c6c9a16d5",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:33:26"
+                },
+                {
+                    "text_content": "Sure! Here is a list of some hot topics nowadays:\n\n1. **Climate Change**: The ongoing debate over the impact of human activities on the environment, including global warming, rising sea levels, natural disasters, and the urgent need for sustainable practices and policies.\n\n2. **COVID-19 Pandemic**: The global health crisis caused by the coronavirus outbreak, affecting millions of lives and economies worldwide. Discussions revolve around vaccination campaigns, public health measures, and the long-term effects of the pandemic.\n\n3. **Social Justice Movements**: Increased global awareness and activism around issues such as racial inequality, gender discrimination, LGBTQ+ rights, and Indigenous rights. These movements seek social change, equality, and justice for marginalized communities.\n\n4. **Artificial Intelligence**: The rapid development and integration of AI technologies in various sectors, including healthcare, finance, and transportation. Discussions focus on ethical concerns, privacy issues, and the impact of AI on jobs and society.\n\n5. **Cybersecurity**: The growing threat of cyber attacks, data breaches, and online privacy violations. With the rise of digital dependence, discussions center on the need for robust cybersecurity measures, legislation, and education.\n\n6. **Remote Work**: The shift towards remote and hybrid work models due to the pandemic, leading to changes in workplace dynamics, employee well-being, and the future of work. Conversations revolve around productivity, communication tools, and work-life balance.\n\n7. **Renewable Energy**: The push for clean energy sources like solar, wind, and hydroelectric power to combat climate change and reduce reliance on fossil fuels. Discussions focus on investment opportunities, technological advancements, and the transition to a sustainable energy grid.\n\n8. **Mental Health**: The growing recognition of mental health issues and the importance of mental well-being in society. Discussions center on destigmatization, access to mental health resources, and the impact of social and economic factors on mental health.\n\nThese are just a few of the hot topics that are currently shaping our world and sparking important discussions across various industries, communities, and governments.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:33:29"
+                }
+            ]
+        },
+        {
+            "uuid": "6a081468-0ba0-4f4e-b43e-c22d18248b3f",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "1. Climate Change: The ongoing debate over the impact of human activities on the environment, including global warming, rising sea levels, natural disasters, and the urgent need for sustainable practices and policies.",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:34:18"
+                },
+                {
+                    "text_content": "Thank you for sharing this information about climate change and its effects on the environment. It is indeed a critical issue that requires global attention and collaborative efforts to address its impact on our planet. If you have any specific questions or need more information on this topic, feel free to ask!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:34:19"
+                }
+            ]
+        },
+        {
+            "uuid": "2177856a-68d0-485a-ac7f-2f5fa33d3382",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:40:54"
+                },
+                {
+                    "text_content": "1. **Climate Change**: The increase in global temperatures due to greenhouse gas emissions is a pressing issue. The debate around climate change involves discussions on mitigation strategies, renewable energy transition, and international cooperation.\n\n2. **Artificial Intelligence (AI)**: AI technology has become a hot topic with its potential to revolutionize various industries. Discussions include concerns about job automation, ethical use of AI, and the need for regulations to ensure responsible implementation.\n\n3. **Cybersecurity**: As more aspects of our lives move online, cybersecurity has become paramount. This topic covers data breaches, hacking incidents, privacy concerns, and the need for stronger security measures to protect individuals and organizations.\n\n4. **Social Justice**: The movement for social justice encompasses issues such as racial equality, LGBTQ rights, gender equality, and economic disparities. Discussions revolve around systemic racism, discrimination, inclusivity, and the need for policies that promote fairness and equality.\n\n5. **Healthcare Reform**: Access to healthcare, affordability of medical services, and the quality of healthcare systems are key topics in various countries. Discussions include universal healthcare, telemedicine, mental health awareness, and the role of technology in healthcare delivery.\n\n6. **Political Polarization**: Growing political divisions have become a significant topic of concern. Discussions focus on the increasing polarization in societies, the impact on governance and democracy, and the need for constructive dialogue to bridge these divides.\n\n7. **Remote Work**: The shift towards remote work accelerated by the COVID-19 pandemic has sparked discussions on its long-term implications. Topics include work-life balance, digital infrastructure needs, productivity challenges, and the future of traditional office spaces.\n\n8. **Sustainable Development**: With increasing concerns about environmental conservation and resource depletion, sustainable development has gained attention. Discussions revolve around eco-friendly practices, waste management, conservation of natural resources, and policies to promote sustainable growth.\n\n9. **Mental Health Awareness**: The importance of mental health and well-being has become a prominent topic. Discussions include destigmatizing mental health issues, access to mental health services, stress management techniques, and the impact of societal pressures on mental well-being.\n\n10. **Global Pandemics**: The COVID-19 pandemic has highlighted the importance of global health security and preparedness. Discussions focus on vaccine distribution, public health response measures, the economic impact of pandemics, and lessons learned for future health crises.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:40:58"
+                }
+            ]
+        },
+        {
+            "uuid": "d829eae3-3bd1-4818-9d86-7f8586837f16",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Explain some hot topics nowadays. Use markdown characters as I told you previously and create an extensive yet neat text. Use numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:41:36"
+                },
+                {
+                    "text_content": "Certainly! Here are some hot topics nowadays:\n\n1. **Climate Change**: The increasing global temperatures, extreme weather events, and melting ice caps have put climate change in the spotlight. Discussions revolve around sustainable practices, renewable energy sources, and international cooperation to combat this pressing issue.\n\n2. **COVID-19 Pandemic**: The ongoing pandemic has significantly impacted healthcare systems, economies, and societies worldwide. Debates continue on vaccination distribution, public health measures, and the long-term implications of the crisis.\n\n3. **Social Justice Movements**: The resurgence of social justice movements, such as Black Lives Matter, #MeToo, and LGBTQ+ rights activism, has highlighted systemic inequalities and discrimination. Calls for reforming laws, policies, and societal norms to promote equality and inclusion are prominent.\n\n4. **Digital Privacy**: With the increasing reliance on technology and data, concerns regarding digital privacy and security have intensified. Concepts like data protection, encryption, and online surveillance are at the forefront of discussions about safeguarding individual rights in the digital age.\n\n5. **Artificial Intelligence**: The rapid advancements in artificial intelligence (AI) technology raise ethical and societal dilemmas. Discussions center on the ethical use of AI, its impact on employment, bias in algorithms, and the need for regulations to govern its development and deployment.\n\n6. **Remote Work**: The shift to remote work due to the pandemic has reshaped traditional work structures. Debates revolve around flexible work arrangements, productivity challenges, mental health implications, and the future of work post-pandemic.\n\n7. **Renewable Energy**: The transition towards renewable energy sources, such as solar and wind power, is gaining traction as countries strive to reduce carbon emissions and combat climate change. Discussions focus on investment strategies, infrastructure development, and the role of renewable energy in achieving sustainability goals.\n\n8. **Global Health**: Beyond the COVID-19 pandemic, global health issues like access to healthcare, vaccine distribution, mental health awareness, and reducing healthcare disparities remain critical topics for policymakers, healthcare professionals, and communities worldwide.\n\nThese are just a few of the hot topics shaping conversations and policies around the world today.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:41:40"
+                }
+            ]
+        },
+        {
+            "uuid": "2fb71d00-07d0-407b-83b6-df55e2f32c6a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": ".replace(/<\\/?p>/g, ''); // Removes <p> tags;",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:43:10"
+                },
+                {
+                    "text_content": "I see that you are using a regular expression to remove HTML `<p>` tags from a text. This will replace the `<p>` and `</p>` tags with an empty string effectively removing them. If you have any more questions or need further assistance, feel free to ask!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:43:11"
+                }
+            ]
+        },
+        {
+            "uuid": "6db8cb3f-0cc9-4b6e-9a38-6071f8173263",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Generate markdown text's numbered list with some hot topics and their description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:43:36"
+                },
+                {
+                    "text_content": "Here is a numbered list in markdown format with some hot topics and their descriptions:\n\n1. Artificial Intelligence (AI)\n    - A rapidly evolving technology that aims to create intelligent machines that can simulate human behavior and cognitive functions.\n\n2. Cybersecurity\n    - The practice of protecting systems, networks, and data from digital attacks and unauthorized access.\n\n3. Internet of Things (IoT)\n    - A network of interconnected devices that can communicate and share data with each other, enabling automation and control in various applications.\n\n4. Blockchain Technology\n    - A decentralized and secure way of recording and verifying transactions across multiple computers, providing transparency and immutability.\n\n5. Virtual Reality (VR) and Augmented Reality (AR)\n    - Technologies that create immersive and interactive environments, enhancing user experiences in gaming, education, healthcare, and other industries.\n\n6. 5G Technology\n    - The latest generation of mobile network technology that promises faster data speeds, lower latency, and increased connectivity for various devices and applications.\n\n7. Quantum Computing\n    - A cutting-edge computing technology that leverages quantum-mechanical phenomena to perform complex calculations at speeds far beyond traditional computers.\n\nFeel free to customize the list or add more topics as needed!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:43:39"
+                }
+            ]
+        },
+        {
+            "uuid": "79bbd893-255f-4895-8228-43dfa53a2f25",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:44:21"
+                },
+                {
+                    "text_content": "Sure! Here is a simple numbered list in markdown text format:\n\n```\n1. First item\n2. Second item\n3. Third item\n``` \n\nPlease let me know if you need any more help with markdown formatting.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:44:22"
+                }
+            ]
+        },
+        {
+            "uuid": "8845c75b-3d48-4278-9472-c66ca57de263",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:44:54"
+                },
+                {
+                    "text_content": "1. **Artificial Intelligence (AI)**\n   - AI is rapidly transforming industries with its ability to analyze data, recognize patterns, and make decisions. It has applications in self-driving cars, healthcare, finance, and more.\n\n2. **Climate Change**\n   - Climate change has become a pressing global issue, leading to rising temperatures, extreme weather events, and sea-level rise. Efforts to mitigate its effects include renewable energy adoption and carbon emissions reduction.\n\n3. **Cybersecurity**\n   - With the increasing frequency of cyber attacks, organizations are focusing on strengthening their cybersecurity measures to protect sensitive data and systems from hackers and threats.\n\n4. **Remote Work**\n   - The COVID-19 pandemic has accelerated the shift towards remote work, prompting organizations to adapt to virtual collaboration tools and flexible work arrangements.\n\n5. **Blockchain Technology**\n   - Blockchain technology, known for its secure and transparent nature, is being explored across industries for applications such as secure transactions, supply chain management, and digital identity verification.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:44:56"
+                }
+            ]
+        },
+        {
+            "uuid": "41c712a5-d54b-449c-a3a8-7dff6619cf8f",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:47:33"
+                },
+                {
+                    "text_content": "1. Artificial Intelligence (AI)\n    - AI refers to the simulation of human intelligence processes by machines, especially computer systems. It is becoming increasingly prevalent in various industries such as healthcare, finance, and self-driving cars.\n\n2. Climate Change \n    - Climate change refers to long-term changes in the Earth's climate, including rising global temperatures, melting polar ice caps, and more frequent extreme weather events. It is a pressing issue that requires urgent action to mitigate its impact on the planet.\n\n3. Cybersecurity\n    - Cybersecurity involves protecting computer systems, networks, and data from cyberattacks and unauthorized access. With the increasing reliance on digital technologies, cybersecurity has become a critical concern for individuals, businesses, and governments.\n\n4. Remote Work\n    - Remote work, also known as telecommuting, refers to working outside of a traditional office setting, typically from home or a co-working space. The COVID-19 pandemic has accelerated the trend towards remote work, leading to changes in work culture and practices.\n\n5. Mental Health Awareness\n    - Mental health awareness involves promoting understanding and support for mental health issues, such as anxiety, depression, and stress. It is essential to break the stigma surrounding mental health and provide resources for those in need of help.\n\n6. Renewable Energy\n    - Renewable energy sources, such as solar, wind, and hydro power, offer sustainable alternatives to fossil fuels and help reduce greenhouse gas emissions. Transitioning to renewable energy is crucial for combating climate change and ensuring a more sustainable future.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:47:37"
+                }
+            ]
+        },
+        {
+            "uuid": "5285ac84-3c78-4c64-8e59-36109b6c3176",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:47:50"
+                },
+                {
+                    "text_content": "Sure! Here is a markdown numbered list of hot topics in technology:\n\n1. **Artificial Intelligence (AI)**\n   - AI technologies are rapidly advancing, revolutionizing industries such as healthcare, finance, and transportation.\n   \n2. **5G Technology**\n   - The deployment of 5G networks enables faster internet speeds, reduced latency, and supports the growth of IoT devices.\n   \n3. **Cybersecurity**\n   - With the increase in cyber threats, organizations are focusing on improving their cybersecurity measures to protect sensitive data and infrastructure.\n   \n4. **Big Data Analytics**\n   - The utilization of big data analytics helps organizations make data-driven decisions, optimize operations, and gain valuable insights into customer behavior.\n   \n5. **Blockchain**\n   - Blockchain technology offers secure and transparent transactions, disrupting industries like finance, supply chain, and healthcare.\n\nFeel free to reach out if you need more information or assistance!",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:47:51"
+                }
+            ]
+        },
+        {
+            "uuid": "cbd66dbe-8ab1-4174-801d-f315a3524ed5",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:51:52"
+                },
+                {
+                    "text_content": "1. **Climate Change**\n   - Climate change refers to the long-term alteration of temperature and typical weather patterns in a place.\n  \n2. **Artificial Intelligence**\n   - Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems.\n\n3. **Blockchain Technology**\n   - Blockchain is a system in which a record of transactions made in bitcoin or another cryptocurrency is maintained across several computers linked in a peer-to-peer network.\n\n4. **Cybersecurity**\n   - Cybersecurity involves the protection of internet-connected systems, including hardware, software, and data, from cyberattacks.\n\n5. **Remote Work**\n   - Remote work refers to a work arrangement that allows employees to work outside of a traditional office setting, often from home or another location, using technology to stay connected to their colleagues and employers.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:51:54"
+                }
+            ]
+        },
+        {
+            "uuid": "1a51101f-1e7e-4223-a426-c9bec9fd7441",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:53:17"
+                },
+                {
+                    "text_content": "1. **Artificial Intelligence (AI)**  \n    - AI refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. It has applications in various industries such as healthcare, finance, and transportation.\n\n2. **Climate Change**  \n    - Climate change is the long-term alteration of temperature and typical weather patterns in a place. It is a significant global challenge that is primarily driven by human activities, such as burning fossil fuels and deforestation.\n\n3. **Cryptocurrency**  \n    - Cryptocurrency is a digital or virtual form of currency that uses cryptography for security. Bitcoin, Ethereum, and Dogecoin are among the most popular cryptocurrencies. They offer a decentralized and secure method of conducting transactions.\n\n4. **Remote Work**  \n    - Remote work refers to the practice of working outside a traditional office setting. It has become increasingly popular due to advancements in technology that enable employees to work from anywhere, leading to greater flexibility and work-life balance.\n\n5. **Cybersecurity**  \n    - Cybersecurity encompasses practices, technologies, and processes designed to protect computers, networks, and data from unauthorized access, cyber attacks, and data breaches. As cyber threats continue to evolve, cybersecurity has become a critical concern for individuals and organizations alike.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:53:20"
+                }
+            ]
+        },
+        {
+            "uuid": "7b2eb4e6-3cfc-4b84-9550-2da7556e714b",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:54:15"
+                },
+                {
+                    "text_content": "1. **Artificial Intelligence (AI)**: AI is a rapidly growing field in technology that involves the development of machines and systems capable of performing tasks that typically require human intelligence, such as speech recognition, decision-making, and visual perception.\n\n2. **Climate Change**: Climate change refers to long-term changes in the Earth's climate, including rising global temperatures, extreme weather events, and melting ice caps. It is a pressing issue that requires urgent action to reduce greenhouse gas emissions and mitigate its impacts.\n\n3. **Cybersecurity**: Cybersecurity focuses on protecting computer systems, networks, and data from cyberattacks, hacking, and unauthorized access. With the increasing digitalization of information, cybersecurity has become crucial for safeguarding sensitive data and maintaining privacy.\n\n4. **Blockchain Technology**: Blockchain is a decentralized digital ledger technology that securely records transactions across multiple computers. It is known for its transparency, security, and potential applications in various industries such as finance, supply chain management, and healthcare.\n\n5. **Remote Work**: Remote work refers to a work arrangement where employees can work outside the traditional office setting, often from home or other remote locations. It has gained prominence in recent years, providing flexibility and work-life balance for employees while presenting challenges in communication and collaboration for organizations.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:54:17"
+                }
+            ]
+        },
+        {
+            "uuid": "9260861f-b957-4d92-b3d5-363d49ba7143",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "generate markdown text numbered list of some hot topic with description",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 21:54:42"
+                },
+                {
+                    "text_content": "1. **Artificial Intelligence (AI)**\n   - AI is revolutionizing various industries by enabling advanced automation, predictive analytics, and decision-making algorithms.\n   \n2. **Blockchain Technology**\n   - Blockchain offers secure and transparent peer-to-peer transactions, with applications in finance, supply chain management, and voting systems.\n  \n3. **Cybersecurity**\n   - As cyber threats continue to rise, cybersecurity measures are crucial to protect data, systems, and networks from malicious attacks.\n  \n4. **Climate Change**\n   - Climate change is a pressing global issue, with rising temperatures and extreme weather events emphasizing the need for sustainable practices.\n  \n5. **Remote Work**\n   - The shift to remote work has accelerated due to the pandemic, impacting workplace culture, communication, and productivity.\n\nChoose any topic, and I can provide more details or make adjustments as needed.",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 21:54:45"
+                }
+            ]
+        },
+        {
+            "uuid": "0594c612-5235-47a2-8622-eb00717d7729",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there!",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 22:09:03"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 22:09:04"
+                }
+            ]
+        },
+        {
+            "uuid": "4f2eace2-401d-41b5-b22e-a88823af24db",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 22:29:12"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 22:29:13"
+                }
+            ]
+        },
+        {
+            "uuid": "5cccf0d0-a178-40b0-9838-165b7020195a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 23:17:58"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 23:17:58"
+                }
+            ]
+        },
+        {
+            "uuid": "cd0f4088-599a-4a80-acb1-3e792597a179",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsd",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 23:46:48"
+                },
+                {
+                    "text_content": "I'm sorry, I don't understand your input. Could you please provide more information or ask a question so I can better assist you?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 23:46:50"
+                }
+            ]
+        },
+        {
+            "uuid": "e0264925-a912-4b64-979e-db287b80a42d",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "24/12/2024, 23:49:27"
+                },
+                {
+                    "text_content": "I'm sorry, I did not understand your input. Could you please provide more information or context so I can assist you better?",
+                    "role": "assistant",
+                    "created_at": "24/12/2024, 23:49:28"
+                }
+            ]
+        }
+    ]
+}

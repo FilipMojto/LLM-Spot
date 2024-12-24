@@ -10,73 +10,51 @@
     <link rel="stylesheet" href="../static/css/chat_editor.css">
 </head>
 <body>
+    <div class="container-fluid chat-editor">
+        <div class="row ">
+          <!-- <div class="col-md-8 pb-2 container chat-panel">
+   -->
 
-
-    <div class="container-fluid chat-editor m-2">
-        <div class="row">
-          <div class="col-md-8 pb-2 container chat-panel">
-            <h2>Chat</h2>
-
-            <div class="container px-3">
-
-                <div class="container-fluid chat-item-right">
-                    <label class="message-text m-3">
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsu
-                    </label>
-                </div>
-                
-                <div class="container-fluid chat-item-left">
-                    <label class="message-text m-3">
-                        Contrary ichard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsu
-
-                    </label>
-                </div>
-
-                <div class="container-fluid chat-item-left">
-                    <label class="message-text m-3">
-                        Contrary ichard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsu
-
-                    </label>
-                </div>
-
-                <div class="container-fluid chat-item-left">
-                    <label class="message-text m-3">
-                        Contrary ichard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsu
-
-                    </label>
-                </div>
-
-                <div class="container-fluid chat-item-left">
-                    <label class="message-text m-3">
-                        Contrary ichard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsu
-
-                    </label>
-                </div>
-
-                <div class="container-fluid chat-item-left">
-                    <label class="message-text m-3">
-                        Contrary ichard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsu
-
-                    </label>
-                </div>
-            </div>
-          
+          <div class="col-md-8 pb-2 chat-panel container px-3">
+            <label>Your chats will appear in this panel</label>
           </div>
           
+          <!-- </div> -->
+          
           <div class="col-md-4 control-panel">
+
             
-            <div class="header">
-                <h2 class="" >Ask model</h2>
+            <!-- <div class="header">
+  
                 <img class="" src="../static/images/setting.png" width="40px">
-            </div>
+            </div> -->
 
             <form id="prompt-form" class="column">
                 
-         
-                <select class="form-select mt-3 mb-3" id="model">
-                    <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
-                    <option value="gpt-4">gpt-4</option>
-                </select>
+                <div class="row">
+                  
+                  <div class="col-lg-6">
+                    <label for="service-select-widget">Service</label>
+
+                    <select class="form-select mt-1 mb-3" id="service-select-widget">
+                      <option value="OpenAI" selected>OpenAI</option>
+                      <option value="Anthropic">Anthropic</option>
+                      <option value="Google" selected>Google</option>
+
+                    </select>
+                  </div>
+                  
+                  <div class="col-lg-6">
+                    <label for="model">Model</label>
+                    <select class="form-select mt-1 mb-3" id="model">
+                        <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
+                        <option value="gpt-4">gpt-4</option>
+                    </select>
+
+                  </div>
+
+
+                </div>
                 
                 <textarea placeholder="Chat..." class="row-12 form-control" id="prompt" required></textarea>
                 
@@ -88,100 +66,10 @@
         </div>
       </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-      <script>
-document.getElementById("submit-icon").addEventListener("click", async (e) => {
-    e.preventDefault();
+    <script src="../static/js/chat_editor/model-loader.js"></script>
+    <script src="../static/js/chat_editor/submit-button.js"></script>
 
-    // Get the input values
-    const prompt = document.getElementById("prompt").value.trim();
-    const model = document.getElementById("model").value;
-
-    // Check if the prompt is empty
-    if (!prompt) {
-        alert("Please enter a prompt.");
-        return;
-    }
-
-    // Function to escape HTML characters
-    const escapeHtml = (str) => {
-        return str.replace(/[&<>"']/g, (match) => {
-            switch (match) {
-                case '&': return '&amp;';
-                case '<': return '&lt;';
-                case '>': return '&gt;';
-                case '"': return '&quot;';
-                case "'": return '&#39;';
-                default: return match;
-            }
-        });
-    };
-
-    // Function to interpret special characters and replace them with actual line breaks and tab spaces
-    const interpretSpecialChars = (str) => {
-        const escapedStr = escapeHtml(str);  // Escape HTML characters first
-
-        // Replace special characters for newlines and tabs
-        let formattedStr = escapedStr
-            .replace(/\\n/g, "<br>") // Replace '\n' with actual line breaks (<br>)
-            .replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;"); // Replace '\t' with 4 spaces (tab space)
-
-        // Interpret Markdown syntax (bold, italic)
-        formattedStr = formattedStr
-            .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")  // Replace '**bold**' with <b>bold</b>
-            .replace(/_(.*?)_/g, "<i>$1</i>");      // Replace '_italic_' with <i>italic</i>
-
-        return formattedStr;
-    };
-
-    try {
-        const chatPanel = document.querySelector(".chat-panel > div");
-
-        // Display the user's input in the chat panel
-        const userMessage = document.createElement("div");
-        userMessage.className = "container-fluid chat-item-left";
-        userMessage.innerHTML = `
-            <label class="message-text m-3">${interpretSpecialChars(prompt)}</label>
-        `;
-        chatPanel.appendChild(userMessage);
-
-        // Display a loading indicator for the response
-        const loadingMessage = document.createElement("div");
-        loadingMessage.className = "container-fluid chat-item-right";
-        loadingMessage.innerHTML = `
-            <label class="message-text m-3">Generating response...</label>
-        `;
-        chatPanel.appendChild(loadingMessage);
-
-        // Scroll to the bottom of the chat panel
-        chatPanel.scrollTop = chatPanel.scrollHeight;
-
-        // Send POST request to the server
-        const response = await fetch("/generate", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ prompt, model }),
-        });
-
-        const result = await response.json();
-
-        // Update the loading message with the server's response
-        loadingMessage.querySelector(".message-text").innerHTML =
-            response.ok ? interpretSpecialChars(result.content) : `Error: ${result.error || "Unexpected error occurred."}`;
-
-        // Scroll to the bottom of the chat panel
-        chatPanel.scrollTop = chatPanel.scrollHeight;
-
-    } catch (error) {
-        // Handle network or other errors
-        alert(`Error: ${error.message}`);
-    } finally {
-        // Clear the input field
-        document.getElementById("prompt").value = "";
-    }
-});
-    </script>
-
-    <script src="../static/js/chat-editor-submit-button.js"></script>
 </body>
 </html>
