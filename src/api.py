@@ -71,6 +71,9 @@ def generate():
     data = request.json
     prompt = data.get("prompt", "")
     model = data.get("model", "gpt-3.5-turbo")
+    temperature = float(data.get("temperature", LLM.DEF_TEMPERATURE))
+    output_tokens = int(data.get("maxTokens", LLM.DEF_MAX_OOUTPUT_TOKENS))
+
     context = data.get("context", LLM.DEF_CONTEXT)  # Use the default context if none is provided.
     created_at = datetime.datetime.now()
 
@@ -78,8 +81,8 @@ def generate():
         response = openai_wrapper.generate_text(
             command=prompt,
             model=model,
-            max_tokens=4096,
-            temperature=1,
+            max_tokens=output_tokens,
+            temperature=temperature,
             context=context  # Explicitly pass the context.
         )
 
@@ -95,6 +98,7 @@ def generate():
         )
         
         log_interaction(model=model, prompt=prompt, system=context, created_at=created_at,
+                        temperature=temperature, max_tokens=output_tokens,
                         response=response)
         
         return jsonify({"content": html_content, "role": "system"})

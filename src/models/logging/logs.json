@@ -1255,6 +1255,175 @@
                     "created_at": "24/12/2024, 23:49:28"
                 }
             ]
+        },
+        {
+            "uuid": "8899c0d8-7a01-4d06-ba4e-ca40095e99f2",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "created_at": "25/12/2024, 14:29:30"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 14:29:30"
+                }
+            ]
+        },
+        {
+            "uuid": "76c5dd19-235f-444f-ab8c-343529b4339e",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there!",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 17:20:02"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 17:20:02"
+                }
+            ]
+        },
+        {
+            "uuid": "b64151fa-00fe-411e-a81d-b35317b63df3",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there!",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 17:21:42"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 17:21:43"
+                }
+            ]
+        },
+        {
+            "uuid": "ff312be1-a9a1-47e4-883e-bdef351f775a",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 2.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 17:22:23"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 17:22:23"
+                }
+            ]
+        },
+        {
+            "uuid": "e3d440cb-507e-41d7-8e12-07e22d274f70",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dssd",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 323,
+                    "created_at": "25/12/2024, 17:22:47"
+                },
+                {
+                    "text_content": "I'm sorry, but I cannot understand the input you provided. Could you please provide more context or clarify your query?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 17:22:48"
+                }
+            ]
+        },
+        {
+            "uuid": "3773f2ee-bb77-4d91-8f6f-1d7a10694f63",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "sdds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 17:25:02"
+                },
+                {
+                    "text_content": "I'm sorry, but I don't understand your input. Could you please provide more information or ask a question so I can assist you better?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 17:25:03"
+                }
+            ]
+        },
+        {
+            "uuid": "634788a7-457b-4412-8d65-9b8eafed8ac1",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsd",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 17:25:05"
+                },
+                {
+                    "text_content": "I'm sorry, I don't understand. Could you please provide more information or ask a specific question so I can better assist you?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 17:25:05"
+                }
+            ]
+        },
+        {
+            "uuid": "46c3955d-3539-448c-accc-062587eb35c0",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 20:26:45"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 20:26:45"
+                }
+            ]
+        },
+        {
+            "uuid": "49c61755-3917-46b8-bdb5-fa4251db0b36",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Show me some good-to-know tips&tricks in css",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "25/12/2024, 20:28:49"
+                },
+                {
+                    "text_content": "Sure! Here are some good-to-know tips and tricks in CSS:\n\n1. Use Flexbox for easy layout design: Flexbox is a powerful layout model in CSS that makes it easy to create complex layouts without the need for floats or positioning.\n\n2. Use CSS Grid for grid-based layouts: CSS Grid is another layout model that allows you to create grid-based layouts with ease. It offers more control over the layout compared to Flexbox.\n\n3. Use CSS Variables for reusability: CSS Variables (also known as custom properties) allow you to define variables in your CSS code and use them throughout your stylesheets. This makes it easier to maintain and update your styles.\n\n4. Use the box-shadow property for simple effects: The box-shadow property allows you to add shadows to elements, giving them a sense of depth. You can use it to create simple effects like card designs or hover effects.\n\n5. Use media queries for responsive design: Media queries allow you to apply different styles based on the size of the viewport. This is essential for creating responsive designs that work well on both desktop and mobile devices.\n\n6. Use CSS animations for interactive elements: CSS animations allow you to create simple animations like fades, slides, and rotations without the need for JavaScript. This can enhance the user experience on your website.\n\n7. Use CSS preprocessors for more advanced styling: CSS preprocessors like Sass or Less provide additional features like variables, mixins, and functions that can help you write more maintainable and efficient CSS code.\n\nThese are just a few tips and tricks to help you improve your CSS skills and create more dynamic and responsive web designs.",
+                    "role": "assistant",
+                    "created_at": "25/12/2024, 20:28:53"
+                }
+            ]
         }
     ]
 }

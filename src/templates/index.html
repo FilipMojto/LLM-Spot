@@ -8,59 +8,77 @@
     <link rel="stylesheet" href="../static/css/main.css">
 
     <link rel="stylesheet" href="../static/css/chat_editor.css">
+    <link rel="stylesheet" href="../static/css/util_widgets.css">
+
 </head>
 <body>
     <div class="container-fluid chat-editor">
         <div class="row ">
-          <!-- <div class="col-md-8 pb-2 container chat-panel">
-   -->
-
-          <div class="col-md-8 pb-2 chat-panel container px-3">
+ 
+          <div class="col-sm-8 pb-2 chat-panel container px-3">
             <label>Your chats will appear in this panel</label>
           </div>
           
-          <!-- </div> -->
-          
-          <div class="col-md-4 control-panel">
-
-            
-            <!-- <div class="header">
-  
-                <img class="" src="../static/images/setting.png" width="40px">
-            </div> -->
-
+          <div class="col-sm-4 control-panel">
             <form id="prompt-form" class="column">
                 
-                <div class="row">
-                  
-                  <div class="col-lg-6">
-                    <label for="service-select-widget">Service</label>
+              <div class="row">
+                <div class="col-lg-6">
+                  <label for="service-select-widget">Service</label>
 
-                    <select class="form-select mt-1 mb-3" id="service-select-widget">
-                      <option value="OpenAI" selected>OpenAI</option>
-                      <option value="Anthropic">Anthropic</option>
-                      <option value="Google" selected>Google</option>
-
-                    </select>
-                  </div>
-                  
-                  <div class="col-lg-6">
-                    <label for="model">Model</label>
-                    <select class="form-select mt-1 mb-3" id="model">
-                        <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
-                        <option value="gpt-4">gpt-4</option>
-                    </select>
-
-                  </div>
-
-
+                  <select class="form-select mt-1 mb-3" id="service-select-widget">
+                    <option value="OpenAI" selected>OpenAI</option>
+                    <option value="Anthropic">Anthropic</option>
+                    <option value="Google">Google</option>
+                  </select>
                 </div>
                 
+                <div class="col-lg-6">
+                  <label for="model">Model</label>
+                  <select class="form-select mt-1 mb-3" id="model">
+                      <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
+                      <option value="gpt-4">gpt-4</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row pb-2" id="optional-tuning-params">
+            
+                <div class="col-xl-9" id="temperature-container">
+                  
+                  
+                  <label for="temperature-slider mb-0">Temperature</label>  
+                  
+                  <div class="row m-0 gx-0">
+                    <div class="col-10 align-self-center" id="temperature-slider-wrapper">
+                      <input type="range" min="0" max="40" value="20" class="slider p-0 m-0" id="temperature-slider">
+                    </div>
+                    
+                    <div class="col-2" id="temperature-value-wrapper">
+                      <input type="text" class="form-control p-0 h-100" style="text-align: center;" value="0" readonly>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-3" id="max-tokens-container">
+                  <label>Max. tokens</label>
+                  <input class="form-control" type="text" value="4096">
+                </div>
+              </div>
+              
+              <div style="height: 100%;">
                 <textarea placeholder="Chat..." class="row-12 form-control" id="prompt" required></textarea>
                 
-                <div class="panel-controls">
+                <div class="panel-action-bar">
                     <img id="submit-icon" src="../static/images/arrow.png" width="45px">
+                    <img id="attach-image-icon" src="../static/images/image.png" width="30px"> 
+                    <input type="file" id="file-attachment-input" name="attachments[]" accept="image/png, image/jpeg" multiple style="display: none; ">
+
+                    <div class="file-attachment-list">
+                      <!-- <label style="color: black;">Sdddsds</label> -->
+                    </div>
                 </div>
+              </div>
             </form>
           </div>
         </div>
@@ -70,6 +88,8 @@
 
     <script src="../static/js/chat_editor/model-loader.js"></script>
     <script src="../static/js/chat_editor/submit-button.js"></script>
+    <script src="../static/js/chat_editor/temperature-slider.js"></script>
+    <script src="../static/js/chat_editor/file-attachment.js"></script>
 
 </body>
 </html>

@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const prompt = document.getElementById("prompt").value.trim();
         document.getElementById("prompt").value = "";
 
+        const temperature = document.querySelector("#optional-tuning-params > #temperature-container > .row div:nth-of-type(2) > input").value.trim();
+        const maxTokens = document.querySelector('#optional-tuning-params > #max-tokens-container > input').value.trim();
+
+
         
 
 
@@ -153,7 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
             
         try {
             const chatPanel = document.querySelector(".chat-panel");
-            chatPanel.removeChild(chatPanel.querySelector(':scope > label'));
+            const labelElement = chatPanel.querySelector(':scope > label');
+
+            // Check if the label element exists before removing it
+            if (labelElement) {
+                chatPanel.removeChild(labelElement);
+            }
 
 
             // Display the user's input
@@ -188,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch("/generate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ prompt }),
+                body: JSON.stringify({ prompt, temperature, maxTokens }),
             });
 
             const result = await response.json();

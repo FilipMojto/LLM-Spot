@@ -12,6 +12,8 @@ class Response:
 
 class LLM(ABC):
 	DEF_CONTEXT = ('You are a helpful assistant. Your responses will be processed by a parser. ')
+	DEF_TEMPERATURE = 1
+	DEF_MAX_OOUTPUT_TOKENS = 4096
 	
 	@abstractmethod
 	def is_key_valid(self, throw_error: bool = True):

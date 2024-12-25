@@ -16,12 +16,17 @@
 }
 
 
+.chat-panel, .control-panel{
+	/* height: clamp(350px, 100%, 90vh);	 */
+	min-height: 95vh;
+	max-height: 100vh;
+}
 
 .chat-panel {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	/* max-height: 90vh; */
-	height: clamp(350px, 100%, 90vh);
+	/* height: clamp(350px, 100%, 90vh); */
 	/* max-height: 90vh;
 	height: 100%; */
 	border: 2px outset black;
@@ -39,9 +44,11 @@
 
 .control-panel{
 	background-color: inherit;
-	min-height: 350px;
-	max-height: 95vh;
+	/* min-height: 95vh;
+	max-height: 100vh; */
+	/* background-color: red; */
 	box-sizing: border-box;
+	display: flex;
 	/* max-width: 300px; */
 }
 
@@ -90,6 +97,7 @@
 }
 
 
+
 .chat-item-left::after, .chat-item-right::after {
     position: absolute;
     top: 50%;
@@ -109,41 +117,113 @@
 }
 
 #prompt-form{
-	height: 100%;
-	position: relative;
-
-	/* background-color: red; */
-	/* padding-right: 5px; */
+	/* height: 100%; */
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
 
-#prompt-form > textarea{
-	height: 50%;
-	/* padding-left: 45px; */
-	/* margin-bottom: 150px; */
+
+#prompt-form  textarea{
+	box-sizing: border-box;
+	height: 87%;
+	min-height: 50px;
 	padding-bottom: 10px;
+	/* resize: vertical; */
 	resize: none;
 	border-radius: 0;
 }
 
-#prompt-form #submit-icon {
+#prompt-form #submit-icon, #prompt-form #attach-image-icon {
 	/* position: absolute; */
 	/* transform: translate(900%, -50px); */
 	/* transform: translateY(-50px); */
 	/* bottom: 35%; */
 	/* bottom: 250px; */
-	bottom: 40%;
-	right: 15px;
+	/* bottom: 40%;
+	right: 15px; */
 	cursor: pointer;
 }
 
-#prompt-form #submit-icon:hover{
+
+
+#prompt-form #submit-icon:hover, #prompt-form #attach-image-icon:hover {
 	transform: scale(1.05);
 	/* transform: translateY(-50px) scale(1.05); */
 }
 
-#prompt-form > .panel-controls{
+.panel-action-bar{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
 	background-color: white;
 	border: none;
 	border-color: white;
 	border-radius: 0 0 5px 5px;
+	/* height: 100%; */
+	flex: 1;
+	/* min-height: 0px; */
+	overflow: hidden;
+}
+
+#temperature-container{
+	display: flex;
+	flex-direction: column;
+}
+
+#temperature-container > .row{
+	flex: 1;
+	/* background-color: red ; */
+}
+
+/* temperature value widget */
+#temperature-value-wrapper > input{
+	/* background-color: red; */
+	/* background-color: green; */
+	max-height: 2.3em;
+}
+
+#temperature-value-wrapper{
+	display: flex;
+	align-items: center;
+}
+
+#temperature-slider-wrapper{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 10px;
+}
+
+.file-attachment-list {
+	color: black;
+	/* opacity: 0.5; */
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(210, 210, 210);
+	margin: 3px 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 3px;
+	overflow-y: scroll;
+	/* height: 100%; */
+	flex: 1;
+	/* background-color: red; */
+	max-height: 4em;
+	
+}
+
+@media only screen and (max-width: 576px) {
+	.chat-editor {
+		overflow: scroll;
+	}
+	.chat-panel {
+		max-height: 70%;
+	}
+
+	#prompt-form {
+		display: flex;
+		flex-direction: column-reverse; /* Reverse the order of children */
+	}
 }

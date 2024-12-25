@@ -7,6 +7,7 @@ import uuid
 DEF_LOG_FILE_PATH = './models/logging/logs.json'
 
 def log_interaction(model: str, prompt: str, system: str, created_at: datetime,
+                    temperature: float, max_tokens: int,
                     response: Response, log_file: str = DEF_LOG_FILE_PATH):
     # Ensure the datetime is serialized in the desired format
     # created_at_str = created_at.strftime("%d/%m/%Y, %H:%M:%S")
@@ -20,6 +21,8 @@ def log_interaction(model: str, prompt: str, system: str, created_at: datetime,
                 "prompt": prompt,
                 "role": "user",
                 "system": system,
+                "temperature": temperature,
+                "max_tokens": max_tokens,
                 "created_at": created_at.strftime("%d/%m/%Y, %H:%M:%S")
             },
             {
