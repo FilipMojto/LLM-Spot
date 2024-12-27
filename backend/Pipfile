@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-openai = "*"
+markdown = "*"
 python-dotenv = "*"
 flask = "*"
-watchdog = "*"
-markdown = "*"
+openai = "*"
+flask-cors = "*"
 
 [dev-packages]
 

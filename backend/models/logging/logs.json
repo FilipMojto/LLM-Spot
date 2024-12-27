@@ -1424,6 +1424,101 @@
                     "created_at": "25/12/2024, 20:28:53"
                 }
             ]
+        },
+        {
+            "uuid": "c4de11c6-984d-44ff-b4cf-0f0eb7e2cfad",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "ddsds",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 0.65,
+                    "max_tokens": 2,
+                    "created_at": "26/12/2024, 15:42:36"
+                },
+                {
+                    "text_content": "I'm",
+                    "role": "assistant",
+                    "created_at": "26/12/2024, 15:42:36"
+                }
+            ]
+        },
+        {
+            "uuid": "a0dcd100-e0e5-4fc5-a6b7-47a56a0e6f44",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "dsssd",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "26/12/2024, 15:42:41"
+                },
+                {
+                    "text_content": "I'm sorry, I didn't quite understand your message. Can you please provide more information or let me know how I can assist you today?",
+                    "role": "assistant",
+                    "created_at": "26/12/2024, 15:42:41"
+                }
+            ]
+        },
+        {
+            "uuid": "c1b02c97-0fd6-4289-b4e4-070ddb86773d",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi there",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "27/12/2024, 17:30:13"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "27/12/2024, 17:30:14"
+                }
+            ]
+        },
+        {
+            "uuid": "e1174b39-40bd-474c-bae6-2cfd7da3a92e",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "27/12/2024, 17:38:35"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "27/12/2024, 17:38:36"
+                }
+            ]
+        },
+        {
+            "uuid": "b0e3c791-c217-4e59-b5a2-33f5c672371f",
+            "model": "gpt-3.5-turbo",
+            "chats": [
+                {
+                    "prompt": "Hi",
+                    "role": "user",
+                    "system": "You are a helpful assistant. Your responses will be processed by a parser. ",
+                    "temperature": 1.0,
+                    "max_tokens": 4096,
+                    "created_at": "27/12/2024, 17:48:45"
+                },
+                {
+                    "text_content": "Hello! How can I assist you today?",
+                    "role": "assistant",
+                    "created_at": "27/12/2024, 17:48:46"
+                }
+            ]
         }
     ]
 }

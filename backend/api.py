@@ -3,6 +3,7 @@ import datetime
 
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import markdown
 
 from models import *
@@ -13,6 +14,8 @@ from models.logging.logging import log_interaction
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)  # Allow all origins
+
 
 # Initialize your OpenAIWrapper
 api_key = os.getenv("OPENAI_API_KEY")

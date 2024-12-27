@@ -1,5 +1,0 @@
-openai
-python-dotenv
-flask
-watchdog
-flask-livereload
