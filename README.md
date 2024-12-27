@@ -1,24 +1,49 @@
-# New Project
+# LLM Spot v0.1.0-beta.1
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## Installation
 
-## Available Scripts
+### Development
+The application will be containerized using Docker, which starts both web and app servers locally.
 
-### npm start
+### Production
+After successful testing of the development release, the first production release will be deployed.
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+## External Dependencies
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+### Frontend
+1. **Snowpack**: Frontend development and TypeScript integration
+2. **Marked**: Parses LLM's markdown into HTML
 
-### npm run build
+### Backend
+1. **Flask**: Deploys the backend server and its endpoints
+2. **Flask-CORS**: Allows the Flask server to handle requests from the web server
+3. **python-dotenv**: Loads environment variables into Python code
+4. **OpenAI**: Communicates with OpenAI's public API
+5. **Requests**: Sends requests to API servers
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+## Development Status
 
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.mjs` config file.
+### Implemented Features
+- [x] Core chat functionality
+- [x] Basic API integration
+- [x] Markdown support
+- [x] File attachment support
+- [x] Conversation context
 
-### Q: What about Eject?
+### Planned Features
+- [ ] Setting personal tokens by user
+- [ ] Splitting chatting into conversations
+- [ ] More keyboard shortcuts
+- [ ] Processing image requests by LLM
+- [ ] Support of multiple LLMs
+- [ ] Better website responsiveness
+- [ ] Error handling
+- [ ] Basic documentation
+- [ ] Installation guide
+- [ ] Basic test coverage
 
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+### Known Issues
+- Single conversation per browser session
+- Conversation history lost on refresh
+- Limited responsiveness on medium/small screens
+

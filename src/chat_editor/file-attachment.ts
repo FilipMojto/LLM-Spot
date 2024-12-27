@@ -27,20 +27,38 @@ if (input) {
           div.style.gap = '5px';
           div.style.alignItems = 'center';
           div.style.justifyContent = 'space-between';
+      
+          div.style.cursor = 'pointer';
+          div.addEventListener('mouseenter', () => {
+            div.style.backgroundColor = '#f0f0f0';
+            deleteFileIcon.style.backgroundColor = '#f0f0f0';
+            fileLabel.style.backgroundColor = '#f0f0f0';
+          });
+
+          div.addEventListener('mouseleave', () => {
+            div.style.backgroundColor = '';
+            deleteFileIcon.style.backgroundColor = '';
+            fileLabel.style.backgroundColor = '';
+          });
+          // div.style.overflowY = 'hidden';
 
           fileListContainer.appendChild(div);
 
           const fileLabel = document.createElement('label');
           fileLabel.textContent = file.name;
+          fileLabel.style.cursor = 'pointer';
 
           div.appendChild(fileLabel);
 
           const deleteFileIcon = document.createElement('img');
           deleteFileIcon.id = 'delete-file-icon';
-          deleteFileIcon.src = '../static/images/delete.png';
+          deleteFileIcon.src = 'images/delete.png';
+          // deleteFileIcon.style.overflowY = 'hidden';
           deleteFileIcon.width = 15;
           deleteFileIcon.style.cursor = 'pointer';
           deleteFileIcon.style.marginLeft = '5px';
+          deleteFileIcon.style.cursor = 'pointer';
+          
 
           deleteFileIcon.addEventListener('click', () => {
             div.remove();

@@ -3,14 +3,30 @@ import { marked } from "marked";
 document.addEventListener("DOMContentLoaded", () => {
     const submitIcon = document.getElementById("submit-icon") as HTMLElement;
     const promptInput = document.getElementById("prompt") as HTMLInputElement;
+    const textarea = document.querySelector(".chat-submission-section > textarea") as HTMLTextAreaElement;
+
+    // Custom renderer for code blocks
+    const renderer = new marked.Renderer();
+    renderer.code = ({ text, lang, escaped }: { text: string, lang?: string, escaped?: boolean }) => {
+        const language = lang || 'plaintext';
+        return `<pre><code class="language-${language}">${marked.parse(text)}</code></pre>`;
+    };
+
+    // Configure Markdown parsing options
+    marked.setOptions({
+        renderer: renderer,
+        breaks: true,   // Convert newlines to <br>
+    });
+
+    // Add Shift+Enter handler
+    textarea.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.key === "Enter" && e.shiftKey) {
+            e.preventDefault();
+            submitIcon.click();
+        }
+    });
 
     submitIcon.addEventListener("click", async (e: MouseEvent) => {
-        
-        // Configure Markdown parsing options
-        marked.setOptions({
-            // sanitize: true, // Prevent raw HTML injection
-            breaks: true,   // Convert newlines to <br>
-        });
         
         e.preventDefault();
 
@@ -74,15 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const result = await response.json();
 
             // Update the response with formatted HTML
-            const parsedContent = marked.parseInline(result.content.trim());
-
+            const parsedContent = marked.parse(result.content.trim().replace(/```.*?\n/g, '').replace(/```/g, ''));
+        
             // Ensure `parsedContent` is a string before calling `replace`
             if (typeof parsedContent === "string") {
                 loadingMessage.innerHTML = parsedContent
-                    .replace(/\\n/g, "<br>")
-                    .replace(/\n/g, "<br>")
-                    .replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;")
-                    .replace(/<br>\s*(<p)/g, '$1');
+                    // .replace(/\\n/g, "<br>")
+                    // .replace(/\n/g, "<br>")
+                    // .replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;")
+                    // .replace(/<br>\s*(<p)/g, '$1')
+                    // .replace(/```[a-z]*\n/g, '') // Remove trailing backticks
+                    // .replace(/```/g, ''); // Remove trailing backticks
             } else {
                 throw new Error("Expected marked.parseInline to return a string.");
             }

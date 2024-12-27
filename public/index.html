@@ -10,7 +10,25 @@
     <link rel="stylesheet" href="css/chat_editor.css">
     <link rel="stylesheet" href="css/util_widgets.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/side_menubar.css"> 
+    <link rel="stylesheet" href="css/side_menubar.css">
+    <link rel="stylesheet" href="css/account_settings_window.css">
+    <!-- <script src="dist/sidebar/account-settings-window.js"></script> -->
+    <script type="module">
+      import { openAccountSettingsWindow } from './dist/sidebar/account-settings-window.js';
+      window.openAccountSettingsWindow = openAccountSettingsWindow;
+
+      import { addResizer } from './dist/utils/custom-resizer.js';
+      window.addResizer = addResizer;
+
+    </script>
+
+    <script>
+      // Add a custom resizer to the chat submission section
+      window.addEventListener('load', () => {
+        addResizer(document.querySelector('.panel-action-bar > .resizer'),
+        document.querySelector('.panel-action-bar'))
+      });
+    </script>
 </head>
 
 <body>
@@ -18,13 +36,50 @@
 
       <h3>LLM Spot</h3>
    
-
-      <!-- <img src="../static/images/setting.png" width="30px"> -->
        <div class="account-icon">
         <label>FM</label>
        </div>
      
     </header>
+
+    <!-- Popup HTML -->
+    <div id="account-settings-popup" class="account-settings-popup" style="display: none;">
+      <div class="popup-content">
+          <h4>Account Settings</h4>
+          
+          <div class="account-settings-form">
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" class="form-control" name="username" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="form-control" name="email" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" class="form-control" name="password" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="confirm-password">Confirm Password</label>
+                  <input type="password" id="confirm-password" class="form-control" name="confirm-password" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="token" id="personal-llm-token">OpenAI Personal Token</label>
+                  <input type="password" type="text" id="token" class="form-control" name="token" required>
+              </div>
+  
+              <div class="form-actions">
+                  <button id="save-settings" class="btn btn-primary">Save</button>
+                  <button id="close-popup" class="btn btn-secondary">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
     <!-- <div class="container-fluid menu-bar"></div> -->
     <div class="content-container">
@@ -62,7 +117,6 @@
               
                   <div class="col-xl-9" id="temperature-container">
                     
-                    
                     <label for="mb-0">Temperature</label>  
                     
                     <div class="row m-0 gx-0">
@@ -82,16 +136,15 @@
                   </div>
                 </div>
                 
-                <div style="display: flex; flex-direction: column; height: 100%; overflow: hidden;">
+                <div class="chat-submission-section">
                   <textarea placeholder="Chat..." class="row-12 form-control " style="flex-grow: 1;" id="prompt" required></textarea>
                   
                   <div class="panel-action-bar">
-                      <img id="submit-icon" src="images/arrow.png" width="45px">
-                      <img id="attach-image-icon" src="images/image.png" width="30px"> 
-                      <input type="file" id="file-attachment-input" name="attachments[]" accept="image/png, image/jpeg" multiple style="display: none; ">
-
-                      <div class="file-attachment-list">
-                      </div>
+                    <div class="resizer"></div>
+                    <img id="submit-icon" src="images/arrow.png" width="45px">
+                    <img id="attach-image-icon" src="images/image.png" width="30px"> 
+                    <input type="file" id="file-attachment-input" name="attachments[]" accept="image/png, image/jpeg" multiple style="display: none;">
+                    <div class="file-attachment-list"></div>
                   </div>
                 </div>
               </form>
@@ -99,9 +152,9 @@
           </div>
         </div>
 
-        <div class="menu-sidebar" style="display: flex;">
+        <div class="menu-sidebar" style="display: none;">
           
-          <div class="sidebar-item">
+          <div class="sidebar-item" onclick="openAccountSettingsWindow()">
             
             <!-- <div> -->
               <img src="images/user.png" width="20px" style="transform: translateX(-1px); ">
@@ -114,6 +167,8 @@
             <a href="#" class="w3-bar-item w3-button">Log Out</a>
           </div>
         </div>
+
+    
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -124,5 +179,8 @@
     <script src="dist/chat_editor/temperature-slider.js" type="module"></script>
     <script src="dist/chat_editor/file-attachment.js" type="module"></script>
     <script src="dist/menu-sidebar.js" type="module"></script>
+    <!-- <script src="dist/control_panel_action_bar/action-bar.js" type="module"></script> -->
+     <script src="dist/utils/custom-resizer.js"></script>
+
 </body>
 </html>
