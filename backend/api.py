@@ -24,7 +24,9 @@ openai_wrapper = openaiwrapper.OpenAIWrapper(api_key)
 anthropic_wrapper = anthropicwrapper.AnthropicWrapper()
 google_wrapper = googlewrapper.GoogleWrapper()
 
-messages: List[str] = []
+from typing import List, Dict
+messages: List[Dict] = []
+
 
 
 @app.route("/")
@@ -43,6 +45,10 @@ def models(service):
             return jsonify(google_wrapper.MODELS)
         case _:
             return jsonify({"error": "Service not supported"}), 404
+
+@app.route('/chats', methods=['GET'])
+def chats():
+    return jsonify(messages)
 
 
 @app.route("/generate", methods=["POST"])
@@ -82,9 +88,10 @@ def generate():
     # Track request timestamp
     created_at = datetime.datetime.now()
     
-    # Build full prompt with conversation history
-    conversation_history = " ".join(messages)
+    # Update conversation history building
+    conversation_history = " ".join([msg["content"] for msg in messages])
     full_prompt = conversation_history + " " + prompt
+    
 
     try:
         # Generate response from LLM
@@ -107,8 +114,21 @@ def generate():
             response=response
         )
 
-        messages.append(prompt)
-        messages.append(response.text_content)
+        # Store messages with metadata
+        messages.append({
+            "name": "Funny Chat",
+            "content": prompt,
+            "role": "user",
+            "timestamp": created_at.isoformat()
+        })
+        
+        messages.append({
+            "name": "Funny Chat",
+            "content": response.text_content,
+            "role": "assistant",
+            "timestamp": datetime.datetime.now().isoformat()
+        })
+
         
         # Return formatted response
         return jsonify({

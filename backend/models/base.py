@@ -11,7 +11,7 @@ class Response:
 
 
 class LLM(ABC):
-	DEF_CONTEXT = ('You are a helpful assistant. Your responses will be processed by a parser. ')
+	DEF_CONTEXT = ('You are a helpful assistant.')
 	DEF_TEMPERATURE = 1
 	DEF_MAX_OOUTPUT_TOKENS = 4096
 	

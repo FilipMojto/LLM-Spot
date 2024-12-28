@@ -4,6 +4,7 @@
     "build": "snowpack build"
   },
   "dependencies": {
+    "highlight.js": "^11.11.1",
     "marked": "^15.0.4"
   },
   "devDependencies": {

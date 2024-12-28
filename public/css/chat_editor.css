@@ -23,25 +23,53 @@
 }
 
 .chat-panel {
+
 	overflow-y: scroll;
 	overflow-x: hidden;
-	/* max-height: 90vh; */
-	/* height: clamp(350px, 100%, 90vh); */
-	/* max-height: 90vh;
-	height: 100%; */
-	border: 2px outset rgb(92, 92, 92);
-	border-left: 3px inset rgb(152, 152, 152);
-	border-top: 3px inset rgb(152, 152, 152);
-	/* min-height: 350px; */
+
+	box-sizing: border-box;
+    padding: 10px; /* Add padding */
 }
+
+
 
 .chat-panel > label{
 	width: 100%;
 	height: 100%;
 	align-content: center;
 	text-align: center;
-	opacity: 0.35;
+	/* opacity: 0.35; */
 }
+
+.code-block {
+	background-color: #282c34;  /* VS Code's default dark theme color */
+	color: #e7e8e9;  /* Base text color */
+	/* text-shadow: 0 0 1px rgba(255, 255, 255, 0.3); */
+	font-family: Franklin Gothic Medium, Helvetica, sans-serif;
+	padding: 1em;
+	border-radius: 4px;
+	margin: 1em 0;	
+	overflow-x: auto;
+	line-height: 1.45;
+}
+
+.code-block code {
+    background-color: inherit;
+    display: block;
+    /* font-family: 'Consolas', 'Monaco', monospace; */
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: pre;
+}
+
+.code-block code > p {
+	opacity: 1;
+	background-color: red;
+}
+
+.code-block * {
+    opacity: 1 !important;  /* Force full opacity on all children */
+}
+
 
 
 .control-panel{
@@ -64,10 +92,10 @@
 
 .chat-item-left, .chat-item-right{
 	border-radius: 10px;
-	background-color: rgb(0, 0, 0);
+	background-color: #444; /* Slightly lighter background color */
 	color: white;
 	/* box-shadow: inset 2px -2px 3px rgb(136, 136, 136); */
-	margin: 15px 0;
+	margin: 30px 0;
 	position: relative;
 	word-wrap: break-word; /* Allow breaking of long words */
     word-break: break-word; /* Ensure text wraps within container */
@@ -76,6 +104,7 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
 }
 
 .chat-item-left p, .chat-item-right p {
@@ -86,11 +115,11 @@
 
 
 .chat-item-right{
-	box-shadow: inset -2px -2px 3px rgb(105, 105, 105);
+	box-shadow: 2px 2px 10px rgb(0, 0, 0);
 }
 
 .chat-item-left{
-	box-shadow: inset 2px -2px 3px rgb(105, 105, 105);
+	box-shadow: -2px 2px 10px rgb(0, 0, 0);
 }
 
 
@@ -98,26 +127,29 @@
 .chat-item-left::after, .chat-item-right::after {
     position: absolute;
     top: 50%;
-    right: -7px; /* Adjust the position slightly to align it with the edge */
+    right: -8px; /* Adjust the position slightly to align it with the edge */
     transform: translateY(-50%); /* Center the triangle vertically */
     content: "";
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 20px 0 20px 10px; /* Triangle pointing left */
-    border-color: transparent transparent transparent rgb(0, 0, 0); /* Match the background color of .chat-item */
+    border-color: transparent transparent transparent #444; /* Match the background color of .chat-item */
 }
 
 .chat-item-right::after{
-	left: -7px;
+	left: -12px;
     transform: translateY(-50%) rotate(180deg); /* Center the triangle vertically */
 }
 
 #prompt-form > .chat-submission-section{
 	display: flex;
 	flex-direction: column;
+	/* min-height: 500px; */
 	height: 100%;
 	overflow: hidden;
+    /* border-top: 1px solid #ccc; Add border to separate from chat panel */
+    /* padding: 10px; Add padding */
 }
 
 #prompt-form{
@@ -125,6 +157,7 @@
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+
 }
 
 
@@ -135,10 +168,11 @@
 	padding-bottom: 10px;
 	/* resize: vertical; */
 	resize: none;
-	border-radius: 0;
+	border-radius: 5px 5px 0 0; /* Add border radius */
+    border: 1px solid #ccc; /* Add border */
 }
 
-#prompt-form #submit-icon, #prompt-form #attach-image-icon {
+.panel-action-bar > #submit-icon, .panel-action-bar > #attach-image-icon {
 	/* position: absolute; */
 	/* transform: translate(900%, -50px); */
 	/* transform: translateY(-50px); */
@@ -147,32 +181,35 @@
 	/* bottom: 40%;
 	right: 15px; */
 	cursor: pointer;
+    /* padding: 5px; Add padding */
+    border-radius: 5px; /* Add border radius */
+    border: 1px solid #ccc; /* Add border */
 }
 
-
+.panel-action-bar > #attach-image-icon{
+	padding: 6.5px;
+	box-sizing: content-box;
+}
 
 #prompt-form #submit-icon:hover, #prompt-form #attach-image-icon:hover {
 	transform: scale(1.05);
 	/* transform: translateY(-50px) scale(1.05); */
 }
 
-.panel-action-bar{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 5px;
-	background-color: white;
-	border: none;
-	border-color: white;
-	border-radius: 0 0 5px 5px;
-	position: relative;
-	/* height: 100%; */
-	/* flex: 1; */
-	/* min-height: 0px; */
-	overflow: hidden;
-	overflow-y: auto;
-	min-height: fit-content;
-	max-height: 20em;
+.panel-action-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    overflow: hidden;
+    overflow-y: hidden;
+    height: clamp(fit-content, 100%, 20em);
+    min-height: 50px;
+	padding-top: 5px;
 }
 
 .resizer {
@@ -209,6 +246,7 @@
 #temperature-value-wrapper{
 	display: flex;
 	align-items: center;
+	min-height: 35px;
 }
 
 #temperature-slider-wrapper{
@@ -218,7 +256,7 @@
 	padding-right: 10px;
 }
 
-.file-attachment-list {
+.panel-action-bar > .file-attachment-list {
 	color: black;
 	/* opacity: 0.5; */
 	display: flex;
@@ -229,10 +267,10 @@
 	border-radius: 5px;
 	padding: 3px;
 	overflow-y: scroll;
-	/* height: 100%; */
+	height: 95%;
 	flex: 1;
 	/* background-color: red; */
-	max-height: 4em;
+	/* max-height: 4em; */
 	
 }
 

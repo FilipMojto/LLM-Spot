@@ -27,7 +27,9 @@ if (input) {
           div.style.gap = '5px';
           div.style.alignItems = 'center';
           div.style.justifyContent = 'space-between';
-      
+          div.style.borderBottom = '1px solid rgb(228, 228, 228)';
+          div.style.fontSize = '0.8rem';
+
           div.style.cursor = 'pointer';
           div.addEventListener('mouseenter', () => {
             div.style.backgroundColor = '#f0f0f0';
