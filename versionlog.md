@@ -94,10 +94,11 @@ Now the website should start in the browser and you can use the application.
 - [x] Loading and managing Conversation context
 - [x] Parsing Code Blocks into Code HTML Element.
 - [x] Highlighting Code Blocks special keywords' font and contrasting it properly.
+- [x] Splitting chatting into conversations
 
 ### Planned Features
 
-- [ ] Splitting chatting into conversations
+- [ ] Allow user to modify the context of the  
 - [ ] Setting personal tokens by user	
 - [ ] More keyboard shortcuts
 - [ ] Processing image requests by LLM

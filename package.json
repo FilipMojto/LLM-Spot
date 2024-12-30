@@ -5,7 +5,8 @@
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
-    "marked": "^15.0.4"
+    "marked": "^15.0.4",
+    "type": "module"
   },
   "devDependencies": {
     "@snowpack/plugin-typescript": "^1.2.1",

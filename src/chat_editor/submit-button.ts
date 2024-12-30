@@ -1,133 +1,90 @@
-import {appendUserMessage, appendBotMessage} from './interface';
+import {
+  appendBotMessage,
+  appendUserMessage,
+  initConversations,
+} from "./chat-panel";
+import { Message } from "./types";
+import { replaceConversationLabel, getCurrentConversationIndex } from "./chat-history";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const submitIcon = document.getElementById("submit-icon") as HTMLElement;
-  const promptInput = document.getElementById("prompt") as HTMLInputElement;
-  const textarea = document.querySelector(
-    ".chat-submission-section > textarea"
-  ) as HTMLTextAreaElement;
-
-//   // Custom renderer for code blocks
-//   const renderer = new marked.Renderer();
-//     renderer.code = ({ text, lang, escaped }: { text: string, lang?: string, escaped?: boolean }) => {
-//         const language = lang || 'plaintext';
-//         return `<pre class="code-block"><code class="language-${language}">${text}</code></pre>`;
-//     };
-
-  // Configure Markdown parsing options
-//   marked.setOptions({
-//     renderer: renderer,
-//     breaks: false, // Convert newlines to <br>
-//   });
-
-  // Add Shift+Enter handler
-  textarea.addEventListener("keydown", (e: KeyboardEvent) => {
-    if (e.key === "Enter" && e.shiftKey) {
-      e.preventDefault();
-      submitIcon.click();
-    }
-  });
-
-  submitIcon.addEventListener("click", async (e: MouseEvent) => {
-    e.preventDefault();
-
-    // Get the prompt and preserve newlines and tabs
+// Extract submit logic to reusable function
+async function handleSubmit(promptInput: HTMLInputElement) {
+  try {
     const prompt = promptInput.value.trim();
-    promptInput.value = "";
-
-    const temperatureInput = document.querySelector<HTMLInputElement>(
-      "#optional-tuning-params > #temperature-container > .row div:nth-of-type(2) > input"
-    );
-    const maxTokensInput = document.querySelector<HTMLInputElement>(
-      "#optional-tuning-params > #max-tokens-container > input"
-    );
-
     if (!prompt) {
       alert("Please enter a prompt.");
       return;
     }
 
-    if (!temperatureInput || !maxTokensInput) {
-      alert("Missing tuning parameters. Ensure inputs are properly set up.");
-      return;
+    await appendUserMessage(prompt);
+    const botMessage = await appendBotMessage("Generating response...");
+
+    promptInput.value = "";
+
+    let conversations = await initConversations();
+    const conversation_id = conversations[await getCurrentConversationIndex() as number].id;
+    const serviceWidget: HTMLSelectElement = (document.getElementById('service-select-widget') as HTMLSelectElement)
+    const service = serviceWidget.options[serviceWidget.selectedIndex].text;
+
+    const modelWidget: HTMLSelectElement = (document.getElementById('model-select-widget') as HTMLSelectElement)
+
+    const model: string = modelWidget.options[modelWidget.selectedIndex].text;
+
+    // const temperatureSlider = 
+
+    const response = await fetch("http://127.0.0.1:5000/generate_text", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt,
+        conversation_id,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const temperature = temperatureInput.value.trim();
-    const maxTokens = maxTokensInput.value.trim();
+    const result: Message = await response.json();
 
-    try {
-      const chatPanel = document.querySelector(".chat-panel") as HTMLElement;
-      if (!chatPanel) {
-        throw new Error("Chat panel not found.");
+    for (let i = 0; i < 5; i++) {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      conversations = await initConversations();
+      const currConIndex = await getCurrentConversationIndex() as number;
+
+      if (conversations[currConIndex].title) {
+        // const currConIndex = await getCurrentConversationIndex() as number;
+
+        await replaceConversationLabel(currConIndex, conversations[currConIndex].title);
+        break;
       }
+    }
 
-      const labelElement = chatPanel.querySelector(
-        ":scope > label"
-      ) as HTMLLabelElement;
+    const panel = document.querySelector(".chat-panel") as HTMLElement;
+    panel.scrollTop = panel.scrollHeight;
+    panel.removeChild(botMessage);
+    appendBotMessage(result.text);
+  } catch (error) {
+    console.error("Error in submit handler:", error);
+  }
+}
 
-      // Remove the label element if it exists
-      if (labelElement) {
-        chatPanel.removeChild(labelElement);
-      }
+document.addEventListener("DOMContentLoaded", () => {
+  const submitIcon = document.getElementById("submit-icon") as HTMLElement;
+  const promptInput = document.getElementById("prompt") as HTMLInputElement;
 
-      appendUserMessage(prompt);
+  // Click handler
+  submitIcon.addEventListener("click", async (e: MouseEvent) => {
+    e.preventDefault();
+    // console.log("Submit button clicked");
+    await handleSubmit(promptInput);
+  });
 
-      // Display the user's input
-    //   const userMessage = document.createElement("div");
-    //   userMessage.className = "container-fluid chat-item-left";
-    //   userMessage.innerHTML = (marked.parse(prompt) as String)
-    //     .replace(/\\n/g, "<br>")
-    //     .replace(/\\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;");
-    //   chatPanel.appendChild(userMessage);
-    //   chatPanel.scrollTop = chatPanel.scrollHeight;
-
-      const loadingMessage = await appendBotMessage("Generating response...");
-      
-      // Display a loading indicator
-    //   const loadingMessage = document.createElement("div");
-    //   loadingMessage.className = "container-fluid chat-item-right";
-    //   loadingMessage.innerHTML = "Generating response...";
-      // chatPanel.appendChild(loadingMessage);
-      // chatPanel.scrollTop = chatPanel.scrollHeight;
-
-      const response = await fetch("http://127.0.0.1:5000/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, temperature, maxTokens }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      chatPanel.removeChild(loadingMessage);
-      appendBotMessage(result.content);
-      
-    //   // Update the response with formatted HTML
-    //   const parsedContent = marked.parse(result.content.trim());
-
-    //   // Ensure `parsedContent` is a string before calling `replace`
-    //   if (typeof parsedContent === "string") {
-    //     loadingMessage.innerHTML = parsedContent;
-    //     console.log(parsedContent);
- 
-    //   } else {
-    //     throw new Error("Expected marked.parseInline to return a string.");
-    //   }
-
-    //   chatPanel.appendChild(loadingMessage);
-    //   hljs.highlightAll();
-    //   chatPanel.scrollTop = chatPanel.scrollHeight;
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        alert(`Error: ${error.message}`);
-      } else {
-        alert("An unknown error occurred.");
-      }
-    } finally {
-      // Clear the input field
-      promptInput.value = "";
+  // Keyboard handler
+  promptInput.addEventListener("keydown", async (e: KeyboardEvent) => {
+    if (e.key === "Enter" && e.shiftKey) {
+      e.preventDefault();
+      // console.log("Ctrl+Enter pressed");
+      await handleSubmit(promptInput);
     }
   });
 });

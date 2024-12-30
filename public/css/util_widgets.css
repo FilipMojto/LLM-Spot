@@ -88,3 +88,23 @@
     opacity: 1;
   }
 }
+
+
+/* custom scrollbar */
+.llm-spot-scrollbar-1::-webkit-scrollbar {
+    width: 8px;
+}
+
+.llm-spot-scrollbar-1::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border-radius: 4px;
+}
+
+.llm-spot-scrollbar-1::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+    border-radius: 4px;
+}
+
+.llm-spot-scrollbar-1::-webkit-scrollbar-thumb:hover {
+    background: #848484;
+}
