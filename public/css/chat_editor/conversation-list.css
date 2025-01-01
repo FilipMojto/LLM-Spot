@@ -99,3 +99,9 @@
     border-color: #4a4a4a;
     /* transform: translateX(2px); */
 }
+
+@media screen and (max-width: 768px) {
+    .conversation-list-panel {
+        min-width: 100%;
+    }
+}

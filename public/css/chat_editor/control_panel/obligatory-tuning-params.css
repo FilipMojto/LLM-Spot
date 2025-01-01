@@ -1,0 +1,11 @@
+#obligatory-params {
+	display: flex; /* Ensure flex container */
+	flex-wrap: wrap; /* Allow wrapping for responsive behavior */
+	flex-direction: row; /* Default to column layout */
+  }
+  
+@media (max-width: 767px) {
+	#obligatory-params {
+		flex-direction: row; /* Switch back to row layout for smaller screens */
+	}
+}

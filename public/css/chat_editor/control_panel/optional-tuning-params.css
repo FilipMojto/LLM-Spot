@@ -1,0 +1,16 @@
+#tuning-params-collapsible{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: bold;
+	height: 3em;
+	padding-right: 15px;
+	padding-left: 13px;
+}
+
+
+#optional-tuning-params{
+	background-color: rgb(141, 141, 141);
+	border-radius: 0 0 10px 10px;	
+}

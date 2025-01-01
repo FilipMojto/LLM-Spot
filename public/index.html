@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Generator</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 
     <!-- here we actually download highlight.js with a specified theme -->
@@ -16,7 +18,18 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/side_menubar.css">
     <link rel="stylesheet" href="css/account_settings_window.css">
+
     <link rel="stylesheet" href="css/chat_editor/conversation-list.css">
+    <link rel="stylesheet" href="css/chat_editor/control_panel/optional-tuning-params.css">
+    <link relf="stylesheet" href="css/chat_editor/control_panel/obligatory-tuning-params.css">
+
+    <link rel="stylesheet" href="css/utils/collapsible.css"> 
+    <link rel="stylesheet" href="css/utils/glass.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <!-- <script src="dist/sidebar/account-settings-window.js"></script> -->
      <!-- <script>hljs.high</script> -->
   
@@ -95,18 +108,18 @@
           <div class="row h-100">
             
   
-            <div class="col-sm-6 pb-2 chat-panel container px-3 llm-spot-scrollbar-1 order-lg-2">
+            <div class="col-md-6 pb-2 chat-panel container px-3 llm-spot-scrollbar-1 order-md-2">
               <label>Your chats will appear in this panel</label>
             </div>
             
-            <div class="col-lg-4 control-panel order-lg-3">
+            <div class="col-md-4 control-panel order-md-3">
               <form id="prompt-form" class="column">
                   
-                <div class="row">
+                <div class="row" id="obligatory-params">
                   <div class="col-lg-6">
                     <label for="service-select-widget">Service</label>
 
-                    <select class="form-select mt-1 mb-3" id="service-select-widget" required>
+                    <select class="form-select mt-1 mb-3" id="service-select-widget" required name="pservice">
                       <option value="OpenAI" selected>OpenAI</option>
                       <option value="Anthropic">Anthropic</option>
                       <option value="Google">Google</option>
@@ -115,43 +128,53 @@
                   
                   <div class="col-lg-6">
                     <label for="model-select-widget">Model</label>
-                    <select class="form-select mt-1 mb-3" id="model-select-widget" required>
+                    <select class="form-select mt-1 mb-3" id="model-select-widget" required name="pmodel">
                         <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
                         <option value="gpt-4">gpt-4</option>
                     </select>
                   </div>
                 </div>
 
-                <div class="row pb-2" id="optional-tuning-params">
-              
-                  <div class="col-xl-9" id="temperature-container">
-                    
-                    <label for="mb-0">Temperature</label>  
-                    
-                    <div class="row m-0 gx-0">
-                      <div class="col-10 align-self-center" id="temperature-slider-wrapper">
-                        <input type="range" min="0" max="40" value="20" class="slider p-0 m-0" id="temperature-slider">
-                      </div>
+                <div class="pb-2" id="optional-tuning-params-container">
+                  <button type="button" id="tuning-params-collapsible" class="collapsible">
+                    <span>Tuning parameters</span>
+                    <span class="state-text-indicator">+</span>
+                  </button>
+                  
+                  
+                  <div class="row py-2 mx-0 collapsible-content glass" id="optional-tuning-params">
+                
+                    <div class="col-xl-9 " id="temperature-container">
                       
-                      <div class="col-2" id="temperature-value-wrapper">
-                        <input type="text" class="form-control p-0 h-100" style="text-align: center;" value="0" readonly required>
+                      <label for="mb-0">Temperature</label>  
+                      
+                      <div class="row m-0 gx-0">
+                        <div class="col-10 align-self-center" id="temperature-slider-wrapper">
+                          <input type="range" min="0" max="40" value="20" class="slider p-0 m-0" id="temperature-slider" required>
+                        </div>
+                        
+                        <div class="col-2" id="temperature-value-wrapper">
+                          <input type="text" class="form-control p-0 h-100" style="text-align: center;" value="0" name="ptemperature" readonly required>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-xl-3" id="max-tokens-container">
-                    <label>Max. tokens</label>
-                    <input class="form-control" type="number" value="4096" required placeholder="4096">
+                    <div class="col-xl-3" id="max-tokens-container">
+                      <label>Max. words</label>
+                      <input class="form-control" type="number" value="4096" required placeholder="4096" name="pmax-tokens">
+                    </div>
+
+                    <div style="margin-bottom: 6px;">
+                      <label>Context</label>
+                      <input class="form-control" type="text" id="prompt-context-input" name="pcontext" required>
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <label>Context</label>
-                  <input class="form-control" type="text" id="prompt-context-input">
-                </div>
+                
                 
                 <div class="chat-submission-section">
-                  <textarea placeholder="Chat..." class="row-12 form-control " style="flex-grow: 1;" id="prompt" required></textarea>
+                  <textarea placeholder="Chat..." class="row-12 form-control " style="flex-grow: 1;" id="prompt" required name="pprompt"></textarea>
                   
                   <div class="panel-action-bar">
                     <div class="resizer"></div>
@@ -164,7 +187,7 @@
               </form>
             </div>
 
-            <div class="col-sm-2 conversation-list-panel order-lg-1">
+            <div class="col-md-2 conversation-list-panel order-md-1">
               <h4>Conversations</h4>
 
               <div class="conversation-list llm-spot-scrollbar-1">
@@ -198,7 +221,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     
-  
+    <!-- Frontend -->
     <script src="dist/document.js" type="module"></script>
     <script src="dist/chat_editor/model-loader.js" type="module"></script>
     <script src="dist/chat_editor/submit-button.js" type="module"></script>
@@ -207,9 +230,13 @@
     <script src="dist/chat_editor/chat-history.js" type="module"></script>
     <script src="dist/chat_editor/prompt_form.js" type="module"></script>
 
-    <script src="dist/menu-sidebar.js" type="module"></script>
-    <!-- <script src="dist/control_panel_action_bar/action-bar.js" type="module"></script> -->
+    <script src="dist/sidebar/menu-sidebar.js" type="module"></script>
+
      <script src="dist/utils/custom-resizer.js" type="module"></script>
+     <script src="dist/utils/collapsible.js" type="module"></script>
+
+     <!-- Backend -->
+    <script src="dist/server.js" type="module"></script>
 
 
 </body>
