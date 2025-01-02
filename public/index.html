@@ -19,12 +19,15 @@
     <link rel="stylesheet" href="css/side_menubar.css">
     <link rel="stylesheet" href="css/account_settings_window.css">
 
+    <link rel="stylesheet" href="css/utils/collapsible.css"> 
+    <link rel="stylesheet" href="css/utils/glass.css">
+    <link rel="stylesheet" href="css/utils/llmspot.css">
+
     <link rel="stylesheet" href="css/chat_editor/conversation-list.css">
     <link rel="stylesheet" href="css/chat_editor/control_panel/optional-tuning-params.css">
     <link relf="stylesheet" href="css/chat_editor/control_panel/obligatory-tuning-params.css">
 
-    <link rel="stylesheet" href="css/utils/collapsible.css"> 
-    <link rel="stylesheet" href="css/utils/glass.css">
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,31 +145,34 @@
                   </button>
                   
                   
-                  <div class="row py-2 mx-0 collapsible-content glass" id="optional-tuning-params">
-                
-                    <div class="col-xl-9 " id="temperature-container">
+                  <div class="collapsible-content py-2" id="optional-tuning-params">
+                    
+                    <div class="llmrow-fluid">
                       
-                      <label for="mb-0">Temperature</label>  
-                      
-                      <div class="row m-0 gx-0">
-                        <div class="col-10 align-self-center" id="temperature-slider-wrapper">
-                          <input type="range" min="0" max="40" value="20" class="slider p-0 m-0" id="temperature-slider" required>
-                        </div>
+                      <div id="temperature-container">
                         
-                        <div class="col-2" id="temperature-value-wrapper">
-                          <input type="text" class="form-control p-0 h-100" style="text-align: center;" value="0" name="ptemperature" readonly required>
+                        <label>Temperature</label>  
+                        
+                        <div class="llmrow-fluid al-center">   
+                          <!-- <div class="col-8" id="temperature-slider-wrapper"> -->
+                            <input id="temperature-slider-wrapper" type="range" min="0" max="40" value="20" class="slider p-0 m-0" id="temperature-slider" required>
+                          <!-- </div>
+                          
+                          <div class="col-4" id="temperature-value-wrapper"> -->
+                            <input id="temperature-input" type="text" class="form-control p-0 px-2 h-100" style="text-align: center; box-sizing: border-box;" value="0" name="ptemperature" readonly required>
+                          <!-- </div> -->
                         </div>
+                      </div>
+
+                      <div id="max-tokens-container">
+                        <label>Max. words</label>
+                        <input class="form-control" type="number" value="4096" required placeholder="4096" name="pmax-tokens">
                       </div>
                     </div>
 
-                    <div class="col-xl-3" id="max-tokens-container">
-                      <label>Max. words</label>
-                      <input class="form-control" type="number" value="4096" required placeholder="4096" name="pmax-tokens">
-                    </div>
-
-                    <div style="margin-bottom: 6px;">
-                      <label>Context</label>
-                      <input class="form-control" type="text" id="prompt-context-input" name="pcontext" required>
+                    <div style="margin-bottom: 6px;" class="px-0 gx-1">
+                      <label class="mb-0">Context</label>
+                      <input class="form-control mt-2" type="text" id="prompt-context-input" name="pcontext" required>
                     </div>
                   </div>
                 </div>
@@ -223,12 +229,12 @@
     
     <!-- Frontend -->
     <script src="dist/document.js" type="module"></script>
-    <script src="dist/chat_editor/model-loader.js" type="module"></script>
-    <script src="dist/chat_editor/submit-button.js" type="module"></script>
-    <script src="dist/chat_editor/temperature-slider.js" type="module"></script>
-    <script src="dist/chat_editor/file-attachment.js" type="module"></script>
-    <script src="dist/chat_editor/chat-history.js" type="module"></script>
-    <script src="dist/chat_editor/prompt_form.js" type="module"></script>
+    <script src="dist/chat_editor/control_panel/model-loader.js" type="module"></script>
+    <script src="dist/chat_editor/control_panel/submit-button.js" type="module"></script>
+    <script src="dist/chat_editor/control_panel/temperature-slider.js" type="module"></script>
+    <script src="dist/chat_editor/control_panel/file-attachment.js" type="module"></script>
+    <script src="dist/chat_editor/chat_list_panel/chat-history.js" type="module"></script>
+    <script src="dist/chat_editor/control_panel/prompt-form.js" type="module"></script>
 
     <script src="dist/sidebar/menu-sidebar.js" type="module"></script>
 

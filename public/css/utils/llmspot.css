@@ -1,0 +1,15 @@
+
+.llmrow, .llmrow-fluid {
+	display: flex;
+	flex-direction: row;
+}
+
+.llmrow-fluid {
+	flex: 1;
+	width: 100%;
+}
+
+.al-center{
+	align-items: center;
+}
+

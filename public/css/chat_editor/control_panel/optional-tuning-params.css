@@ -10,7 +10,41 @@
 }
 
 
+
+
 #optional-tuning-params{
 	background-color: rgb(141, 141, 141);
 	border-radius: 0 0 10px 10px;	
+	display: flex;
+	flex-direction: column;
+}
+
+#optional-tuning-params > .llmrow-fluid:first-child{
+	gap: 10px;
+}	
+
+#temperature-container{
+	flex: 1;
+}
+
+#temperature-container > .llmrow-fluid:first-of-type{
+	gap: 10px;
+}
+
+#temperature-slider-wrapper{
+	flex: 1;
+}
+
+#temperature-input{
+	max-width: 3em;
+}
+
+#max-tokens-container{
+	max-width: 5.7em;
+}
+
+@media (max-width: 1068px){
+	#optional-tuning-params > .llmrow-fluid:first-child{
+		flex-direction: column;
+	}	
 }

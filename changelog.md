@@ -121,4 +121,7 @@ Now the website should start in the browser and you can use the application.
 - Panel Action bar now has a minimal height.
 
 ### Known Issues
-- Still the responsiveness could be better. 
+- Still, responsiveness could be better. For smaller screens the total height of website should be smaller.
+- Website should be more UX-designed (for instance when sending a request the submit button could its icon to indicate the llm processes the request, etc.)
+- Font inside parsed code blocks is too bold.
+- Account Settings are still useless.
