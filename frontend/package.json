@@ -1,12 +1,12 @@
 {
+  "type": "module",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
-    "marked": "^15.0.4",
-    "type": "module"
+    "marked": "^15.0.4"
   },
   "devDependencies": {
     "@snowpack/plugin-typescript": "^1.2.1",
