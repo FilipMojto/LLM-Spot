@@ -21,7 +21,7 @@ jobs:
           registry: ghcr.io
 
        - name: Build and push frontend Docker image
-          run: |
+        run: |
           docker build --label "org.opencontainers.image.source=https://github.com/${{ github.repository }}" \
                        --label "org.opencontainers.image.description=Frontend container for LLM Spot" \
                        -t ghcr.io/filipmojto/frontend:latest ./frontend
