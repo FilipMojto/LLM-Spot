@@ -1,0 +1,25 @@
+body{
+	font-family: "poppins", Helvetica, sans-serif;
+	height: 98vh;
+	width: 100vw;
+	color: white;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	overflow-y: auto;
+	/* box-sizing: content-box; */
+}
+
+.content-container{
+	background-color: rgb(82, 82, 82);
+
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	padding: 5px;
+	/* overflow-y: scroll; */
+}

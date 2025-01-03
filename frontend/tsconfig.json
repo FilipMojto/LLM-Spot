@@ -1,6 +1,6 @@
 {
   // "include": ["src", "types", "exploratory"],
-  "include": ["src", "types", "exploratory", "chat_editor"],
+  "include": ["./src", "./types"],
   "compilerOptions": {
     // "module": "esnext",
     // // "target": "esnext",

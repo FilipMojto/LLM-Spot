@@ -1,0 +1,38 @@
+header{
+	background-color: black;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3px;
+	padding-right: 10px;
+}
+
+header h3 {
+	margin: 5px;
+}
+
+header > img{
+	margin: 5px;
+	filter: invert(1);
+	cursor: pointer;
+}
+
+header > .account-icon{
+	background-color: rgb(148, 98, 13);
+	border-radius: 15px;
+	padding: 10px;
+	margin: 5px 0;
+	cursor: pointer;
+}
+
+header > .account-icon:hover{
+	transform: scale(1.05);
+}
+
+.account-icon > label{
+	user-select: none; /* Standard syntax */
+	cursor: pointer;
+
+}
