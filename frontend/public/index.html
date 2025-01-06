@@ -59,6 +59,8 @@
     <header class="">
 
       <h3>LLM Spot</h3>
+
+      
    
        <div class="account-icon">
         <label>FM</label>
@@ -119,9 +121,7 @@
               <form id="prompt-form" class="column">
                   
                 <div class="row" id="obligatory-params">
-                  <div class="col-lg-6">
-                    <label for="service-select-widget">Service</label>
-
+                  <div class="col-sm-6">
                     <select class="form-select mt-1 mb-3" id="service-select-widget" required name="pservice">
                       <option value="OpenAI" selected>OpenAI</option>
                       <option value="Anthropic">Anthropic</option>
@@ -129,21 +129,19 @@
                     </select>
                   </div>
                   
-                  <div class="col-lg-6">
-                    <label for="model-select-widget">Model</label>
+                  <div class="col-sm-6">
                     <select class="form-select mt-1 mb-3" id="model-select-widget" required name="pmodel">
-                        <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
-                        <option value="gpt-4">gpt-4</option>
+                        <!-- <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
+                        <option value="gpt-4">gpt-4</option> -->
                     </select>
                   </div>
                 </div>
 
                 <div class="pb-2" id="optional-tuning-params-container">
                   <button type="button" id="tuning-params-collapsible" class="collapsible">
-                    <span>Tuning parameters</span>
+                    <span>Additional parameters</span>
                     <span class="state-text-indicator">+</span>
                   </button>
-                  
                   
                   <div class="collapsible-content py-2" id="optional-tuning-params">
                     
@@ -194,7 +192,10 @@
             </div>
 
             <div class="col-md-2 conversation-list-panel order-md-1">
-              <h4>Conversations</h4>
+              <div class="llmrow-fluid al-center horal-center" style="flex: 0;">
+                <h4 style="margin: 0;">Chats</h4>
+                <img src="images/bubble-chat.png" width="20px" class="invert-bg">
+              </div>
 
               <div class="conversation-list llm-spot-scrollbar-1">
                 
@@ -210,27 +211,27 @@
           <div class="sidebar-item" onclick="openAccountSettingsWindow()">
             
             <!-- <div> -->
-              <img src="images/user.png" width="20px" style="transform: translateX(-1px); ">
+              <img src="images/user.png" width="17px" style="transform: translateX(-1px); ">
             <!-- </div> -->
             <a href="#" class="w3-bar-item w3-button">Account</a>
           </div>
 
           <div class="sidebar-item" style="align-content: center;">
-            <img src="images/exit.png" width="20px" style="transform: translateX(1px);">
+            <img src="images/exit.png" width="17px" style="transform: translateX(1px);">
             <a href="#" class="w3-bar-item w3-button">Log Out</a>
           </div>
         </div>
-
-    
     </div>
 
+    <!-- External Services -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     
     <!-- Frontend -->
+    <script src="dist/setup.js" type="module"></script>
     <script src="dist/document.js" type="module"></script>
     <script src="dist/chat_editor/control_panel/model-loader.js" type="module"></script>
-    <script src="dist/chat_editor/control_panel/submit-button.js" type="module"></script>
+    <script src="dist/chat_editor/control_panel/on-submit.js" type="module"></script>
     <script src="dist/chat_editor/control_panel/temperature-slider.js" type="module"></script>
     <script src="dist/chat_editor/control_panel/file-attachment.js" type="module"></script>
     <script src="dist/chat_editor/chat_list_panel/chat-history.js" type="module"></script>
@@ -243,7 +244,5 @@
 
      <!-- Backend -->
     <script src="dist/server.js" type="module"></script>
-
-
 </body>
 </html>

@@ -1,0 +1,7 @@
+__all__ = ['DEF_CONTEXT', 'DEF_RANDOMNESS', 'DEF_WORD_VARIETY', 'DEF_REPETITIVENESS', 'DEF_MAX_OUTPUT_TOKENS']
+
+DEF_CONTEXT = ('You are a helpful assistant. Do not generate harmful, explicit, or biased content.')
+DEF_RANDOMNESS = 1
+DEF_WORD_VARIETY = 0.5
+DEF_REPETITIVENESS = 0
+DEF_MAX_OUTPUT_TOKENS = 4096

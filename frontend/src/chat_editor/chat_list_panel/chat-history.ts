@@ -4,7 +4,7 @@ import {
     clearMessages
 } from "../chat_panel/chat-panel";
 
-import { Conversation } from "../../types";
+import { Conversation, Prompt, Response, Message, isPrompt, isResponse } from "../../types";
 import { initConversations, createChat } from "../../server";
 
 
@@ -93,6 +93,8 @@ async function fillChats(chats: Conversation[] = [],
     // }
 }
 
+
+
 async function fillMessages(conversations: Conversation[], index: number)
 : Promise<void>
 {
@@ -107,10 +109,15 @@ async function fillMessages(conversations: Conversation[], index: number)
     } else {
         // statusLabel.style.display = "none";
         conversations[index].messages.forEach((msg) => {
-            if (msg.role === "user") {
-                appendUserMessage(msg.text);
-            } else {
-                appendBotMessage(msg.text);
+            if (msg.role === "user" && isPrompt(msg)) {
+            
+                appendUserMessage(msg.instruct);
+            
+            } else if(msg.role == "assistant" && isResponse(msg)) {
+                appendBotMessage(msg.chunks.join(""));
+            }
+            else{
+                console.error("Unexpected!")
             }
         });
     }

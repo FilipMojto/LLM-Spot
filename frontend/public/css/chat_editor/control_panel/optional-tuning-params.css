@@ -15,7 +15,7 @@
 #optional-tuning-params{
 	background-color: rgb(141, 141, 141);
 	border-radius: 0 0 10px 10px;	
-	display: flex;
+	display: none;
 	flex-direction: column;
 }
 

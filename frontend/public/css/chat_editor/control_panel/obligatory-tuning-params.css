@@ -2,7 +2,13 @@
 	display: flex; /* Ensure flex container */
 	flex-wrap: wrap; /* Allow wrapping for responsive behavior */
 	flex-direction: row; /* Default to column layout */
+	color: inherit;
   }
+
+#obligatory-params select{
+	background-color: red;
+	color: red;
+}
   
 @media (max-width: 767px) {
 	#obligatory-params {

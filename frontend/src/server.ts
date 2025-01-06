@@ -18,6 +18,7 @@ export async function fetchConversations(): Promise<Conversation[]> {
 	}
 
 	const conversations: Conversation[] = await response.json();
+	console.log("conversations: ", conversations);
 	if (!conversations) {
 	  throw new Error("No conversations found.");
 	} else {
@@ -55,7 +56,7 @@ export async function initConversations(): Promise<Conversation[]> {
   try {
 	// Try to fetch existing conversations
 	const conversations = await fetchConversations();
-
+	console.log(conversations);
 	// If no conversations exist, create a new one
 	if (!conversations || conversations.length === 0) {
 	  const newConversation = await createChat();

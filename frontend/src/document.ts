@@ -9,7 +9,6 @@ if (contentContainer) { // Check if contentContainer is not null before adding e
     if (menu) { // Check if menu is not null before accessing its style
       if (menu.style.display === 'flex') {
         menu.style.display = 'none';
-        console.log("HERE");
       }
     } else {
       console.error("Menu element not found!");

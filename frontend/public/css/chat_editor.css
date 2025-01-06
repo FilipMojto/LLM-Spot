@@ -70,16 +70,6 @@
     white-space: pre;
 }
 
-.code-block code > p {
-	opacity: 1;
-	/* background-color: red; */
-}
-
-.code-block * {
-    opacity: 1 !important;  /* Force full opacity on all children */
-}
-
-
 
 .control-panel{
 	background-color: inherit;
@@ -124,6 +114,7 @@
 .chat-item-left p, .chat-item-right p {
 	margin: 0;
 	display: inline;
+	font-size: 0.8rem;
 }
 
 
@@ -171,7 +162,7 @@
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-
+	font-size: 0.8rem !important;
 }
 
 

@@ -1,7 +1,7 @@
-export {};
+
 
 // Function to fetch models and populate the select widget
-async function fetchAndPopulateModels(service: string): Promise<void> {
+export async function fetchAndPopulateModels(service: string): Promise<void> {
     try {
         // Fetch models from the server
         const response = await fetch(`http://127.0.0.1:5000/models/${service}`, {
@@ -15,9 +15,10 @@ async function fetchAndPopulateModels(service: string): Promise<void> {
 
         // Parse the JSON response
         const models: string[] = await response.json();
+        console.log("received models: ", models);
 
         // Get the select widget
-        const selectWidget = document.getElementById('model') as HTMLSelectElement;
+        const selectWidget = document.getElementById('model-select-widget') as HTMLSelectElement;
         if (!selectWidget) {
             throw new Error("Select widget with ID 'model' not found.");
         }

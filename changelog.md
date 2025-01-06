@@ -104,4 +104,51 @@
 - Responsiveness can still be improved for very small screens.
 - UX enhancements, such as better status indicators for requests.
 - Font in parsed code blocks is too bold.
+- Font in messages seems rather big.
 - Account settings remain non-functional.
+- LLM responses should be processed in stream.
+- Web App still supports only one model.
+- OpenAI's models not loaded properly after OpenAI service is selected.
+- At the start, additional parameters aren't collapsed properly.
+
+# LLM Spot v0.3.0-Pre-alpha
+
+## Development Status
+
+### Implemented Features
+
+- Core chat functionality.
+- Basic API integration.
+- Markdown support.
+- File attachment support.
+- Conversation context management.
+- Parsing and highlighting of code blocks.
+- Support for multiple conversations per session.
+- Persistent conversation history.
+- App Containerization.
+- LLM Responses returned as streams.
+
+
+### Planned Features
+- Integrating Anthropic and Google into supported services.
+- Adding more UX design by inserting loading animation to imply Client-Server communication.
+- Move ConversationList from standard layout into upper layout.
+
+### Changelog
+
+#### Added
+
+- App servers are now containerized in Docker Containers.
+
+#### Improved
+
+- LLM's reponses are returned, processed and displayed in streams.
+- Supported services are now loaded dynamically.
+
+
+#### Fixed
+
+- Additional Parameters are collapsed properly.
+- OpenAI's models are now loaded when selecting this service.
+
+### Known Issues

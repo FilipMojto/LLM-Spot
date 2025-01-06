@@ -13,3 +13,10 @@
 	align-items: center;
 }
 
+.horal-center{
+	justify-content: center;
+}
+
+.invert-bg{
+	filter: invert(1);
+}

@@ -92,6 +92,21 @@ export async function appendBotMessage(message: string): Promise<HTMLElement> {
   return loadingMessage;
 }
 
+export async function updateLastBotMessage(content: string) {
+  const chatPanel = document.querySelector(".chat-panel") as HTMLElement;
+
+  // Find the last added message instead of using a complex selector
+  const lastMessage = chatPanel.querySelector(".container-fluid.chat-item-right:last-of-type") as HTMLElement;
+
+  if (lastMessage) {
+    
+    lastMessage.innerHTML = marked.parse(content) as string;  // Update with the parsed message
+    hljs.highlightAll();  // Reapply syntax highlighting if needed
+  } else {
+    console.error("No last message found.");
+  }
+}
+
 export async function clearMessages() {
   const chatPanel = document.querySelector(".chat-panel") as HTMLElement;
   chatPanel.innerHTML = "";

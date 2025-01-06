@@ -1,10 +1,10 @@
 import {
   appendBotMessage,
-  appendUserMessage
+  appendUserMessage,
+  updateLastBotMessage
 } from "../chat_panel/chat-panel";
 
 import { initConversations, generateText } from "../../server";
-import { Message } from "../../types";
 import {
   replaceConversationLabel,
   getCurrentConversationIndex,
@@ -17,10 +17,8 @@ const promptForm = document.getElementById("prompt-form") as HTMLFormElement;
 promptForm.addEventListener("submit", async function (event) {
   event.preventDefault();
   console.log("submitting form");
+
   try {
-    const promptForm = document.getElementById(
-      "prompt-form"
-    ) as HTMLFormElement;
     const prompt = promptInput.value.trim();
     if (!prompt) {
       alert("Please enter a prompt.");
@@ -91,7 +89,51 @@ promptForm.addEventListener("submit", async function (event) {
       throw new Error(errorMessage); // You can use this for logging or further processing
     }
 
-    const result: Message = await response.json();
+
+    const reader = response.body?.getReader(); // Get the readable stream reader
+    const decoder = new TextDecoder("utf-8"); // Decode UTF-8 chunks
+
+    if (!reader) {
+      console.error("No stream available.");
+      return;
+    }
+
+     // Process the streamed data
+    console.log("baba");
+    const panel = document.querySelector(".chat-panel") as HTMLElement;
+    // panel.scrollTop = panel.scrollHeight;
+    panel.removeChild(botMessage);
+    appendBotMessage("")
+    // appendBotMessage(result.text);
+    let receivedText = "";
+    while (true) {
+      panel.scrollTop = panel.scrollHeight;
+
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      // Decode the chunk into a string
+      const chunk = decoder.decode(value, { stream: true });
+
+      // Split the chunk into individual JSON objects (based on newline)
+      const chunks = chunk.split('\n').filter(Boolean);  // Split by newline and remove any empty strings
+      console.log("chunks", chunks);
+      // Process each chunk
+      chunks.forEach((chunkData) => {
+          try {
+              const parsedData = JSON.parse(chunkData.trim());  // Parse the chunk as JSON and trim extra whitespace
+              receivedText += parsedData.chunk;  // Append the chunk to the complete response text
+
+              updateLastBotMessage(receivedText);  // Update the UI with the received text
+          } catch (error) {
+              console.error('Error parsing JSON chunk:', error);
+          }
+      });
+    }
+
+    // Final processing after the stream ends
+    console.log("Complete response:", receivedText);
+
 
     for (let i = 0; i < 5; i++) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -109,10 +151,10 @@ promptForm.addEventListener("submit", async function (event) {
       }
     }
 
-    const panel = document.querySelector(".chat-panel") as HTMLElement;
-    panel.scrollTop = panel.scrollHeight;
-    panel.removeChild(botMessage);
-    appendBotMessage(result.text);
+    // const panel = document.querySelector(".chat-panel") as HTMLElement;
+    // panel.scrollTop = panel.scrollHeight;
+    // panel.removeChild(botMessage);
+    // appendBotMessage(result.text);
   } catch (error) {
     console.error("Error in submit handler:", error);
   }

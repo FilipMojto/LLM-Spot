@@ -165,3 +165,6 @@ exploratory
 
 /docs/dev_ideas.md
 docker-compose.yml
+/backend/mylogs.py
+/backend/tests/*
+/backend/data/logs.json
