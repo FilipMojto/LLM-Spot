@@ -40,7 +40,8 @@
 }
 
 #max-tokens-container{
-	max-width: 5.7em;
+	/* max-width: 5.7em; */
+	min-width: 7.5em;
 }
 
 @media (max-width: 1068px){

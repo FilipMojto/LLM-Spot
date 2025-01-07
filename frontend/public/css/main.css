@@ -1,3 +1,12 @@
+:root{
+	--second-layer-bg-color: #2c2c2c;
+	--second-layer-bg-color-highlight: #1f1f1f;
+}
+
+.second-layer{
+	box-shadow: 0 2px 5px black; /* Add subtle shadow */
+}
+
 body{
 	font-family: "poppins", Helvetica, sans-serif;
 	height: 98vh;
@@ -20,6 +29,6 @@ body{
 	height: 100%;
 	position: relative;
 	overflow: hidden;
-	padding: 5px;
+	/* padding: 5px; */
 	/* overflow-y: scroll; */
 }

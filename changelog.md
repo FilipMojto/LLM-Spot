@@ -117,38 +117,39 @@
 
 ### Implemented Features
 
-- Core chat functionality.
-- Basic API integration.
-- Markdown support.
-- File attachment support.
-- Conversation context management.
-- Parsing and highlighting of code blocks.
-- Support for multiple conversations per session.
-- Persistent conversation history.
-- App Containerization.
-- LLM Responses returned as streams.
-
+- [x] Core chat functionality.
+- [x] Basic API integration.
+- [x] Markdown support.
+- [x] File attachment support.
+- [x] Conversation context management.
+- [x] Parsing and highlighting of code blocks.
+- [x] Support for multiple conversations per session.
+- [x] Persistent conversation history.
+- [x] App Containerization.
+- [x] LLM Responses returned as streams.
+- [x] Move ConversationList from standard layout into upper layout.
 
 ### Planned Features
-- Integrating Anthropic and Google into supported services.
-- Adding more UX design by inserting loading animation to imply Client-Server communication.
-- Move ConversationList from standard layout into upper layout.
+- [ ] Integrating Anthropic and Google into supported services.
+- [ ] Adding more UX design by inserting loading animation to imply Client-Server communication.
+
 
 ### Changelog
 
 #### Added
 
-- App servers are now containerized in Docker Containers.
+- [x] App servers are now containerized in Docker Containers.
 
 #### Improved
 
-- LLM's reponses are returned, processed and displayed in streams.
-- Supported services are now loaded dynamically.
-
+- [x] LLM's reponses are returned, processed and displayed in streams.
+- [x] Supported services are now loaded dynamically.
+- [x] Changed the default Chat Title to 'New Chat'.
+- [x] Current chat is highlighted in ChatListPanel.
 
 #### Fixed
 
-- Additional Parameters are collapsed properly.
-- OpenAI's models are now loaded when selecting this service.
+- [x] Additional Parameters are collapsed properly.
+- [x] OpenAI's models are now loaded when selecting this service.
 
 ### Known Issues

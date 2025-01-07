@@ -4,7 +4,7 @@ import {
   updateLastBotMessage
 } from "../chat_panel/chat-panel";
 
-import { initConversations, generateText } from "../../server";
+import { fetchConversations, generateText } from "../../server";
 import {
   replaceConversationLabel,
   getCurrentConversationIndex,
@@ -38,7 +38,7 @@ promptForm.addEventListener("submit", async function (event) {
 
     promptInput.value = "";
 
-    let conversations = await initConversations();
+    let conversations = await fetchConversations();
     const conversation_id =
       conversations[(await getCurrentConversationIndex()) as number].id;
 
@@ -137,7 +137,7 @@ promptForm.addEventListener("submit", async function (event) {
 
     for (let i = 0; i < 5; i++) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      conversations = await initConversations();
+      conversations = await fetchConversations();
       const currConIndex = (await getCurrentConversationIndex()) as number;
 
       if (conversations[currConIndex].title) {

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/utils/glass.css">
     <link rel="stylesheet" href="css/utils/llmspot.css">
 
-    <link rel="stylesheet" href="css/chat_editor/conversation-list.css">
+    <link rel="stylesheet" href="css/chat_editor/chat-list.css">
     <link rel="stylesheet" href="css/chat_editor/control_panel/optional-tuning-params.css">
     <link relf="stylesheet" href="css/chat_editor/control_panel/obligatory-tuning-params.css">
 
@@ -57,15 +57,10 @@
 
 <body>
     <header class="">
-
       <h3>LLM Spot</h3>
-
-      
-   
        <div class="account-icon">
         <label>FM</label>
        </div>
-     
     </header>
 
     <!-- Popup HTML -->
@@ -109,10 +104,26 @@
 
     <!-- <div class="container-fluid menu-bar"></div> -->
     <div class="content-container">
-      <div class="container-fluid chat-editor llm-spot-scrollbar-1">
+        <div class="container-fluid chat-editor llm-spot-scrollbar-1">
+          
+          <div style="position: absolute; z-index: 300;">
+            <div id="toggle-chat-list-wrapper" class="second-layer">
+              <img id="toggle-chat-list-icon" src="images/bubble-chat.png" width="35px" class="invert-bg">
+            </div>
+
+            <div class="second-layer col-md-2 chat-list-panel clp-hidden order-md-1">
+              <div class="header llmrow-fluid al-center horal-center">
+                <h4 style="margin: 0;">Chats</h4>
+                <img src="images/bubble-chat.png" width="23px" class="invert-bg">
+              </div>
+
+              <div class="chat-list llm-spot-scrollbar-1"></div>
+
+              <button>New</button>
+            </div>
+          </div>
+
           <div class="row h-100">
-            
-  
             <div class="col-md-6 pb-2 chat-panel container px-3 llm-spot-scrollbar-1 order-md-2">
               <label>Your chats will appear in this panel</label>
             </div>
@@ -131,8 +142,7 @@
                   
                   <div class="col-sm-6">
                     <select class="form-select mt-1 mb-3" id="model-select-widget" required name="pmodel">
-                        <!-- <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
-                        <option value="gpt-4">gpt-4</option> -->
+     
                     </select>
                   </div>
                 </div>
@@ -164,7 +174,7 @@
 
                       <div id="max-tokens-container">
                         <label>Max. words</label>
-                        <input class="form-control" type="number" value="4096" required placeholder="4096" name="pmax-tokens">
+                        <input class="form-control" type="number" value="4000" placeholder="4000" name="pmax-tokens" required>
                       </div>
                     </div>
 
@@ -190,19 +200,8 @@
                 </div>
               </form>
             </div>
-
-            <div class="col-md-2 conversation-list-panel order-md-1">
-              <div class="llmrow-fluid al-center horal-center" style="flex: 0;">
-                <h4 style="margin: 0;">Chats</h4>
-                <img src="images/bubble-chat.png" width="20px" class="invert-bg">
-              </div>
-
-              <div class="conversation-list llm-spot-scrollbar-1">
-                
-              </div>
-
-              <button>New</button>
-            </div>
+            
+            
           </div>
         </div>
         
@@ -229,13 +228,13 @@
     
     <!-- Frontend -->
     <script src="dist/setup.js" type="module"></script>
-    <script src="dist/document.js" type="module"></script>
+    <!-- <script src="dist/document.js" type="module"></script> -->
     <script src="dist/chat_editor/control_panel/model-loader.js" type="module"></script>
     <script src="dist/chat_editor/control_panel/on-submit.js" type="module"></script>
-    <script src="dist/chat_editor/control_panel/temperature-slider.js" type="module"></script>
     <script src="dist/chat_editor/control_panel/file-attachment.js" type="module"></script>
-    <script src="dist/chat_editor/chat_list_panel/chat-history.js" type="module"></script>
+    <!-- <script src="dist/chat_editor/chat_list_panel/chat-history.js" type="module"></script> -->
     <script src="dist/chat_editor/control_panel/prompt-form.js" type="module"></script>
+    <script src="dist/chat_editor/listeners.js" type="module"></script>
 
     <script src="dist/sidebar/menu-sidebar.js" type="module"></script>
 

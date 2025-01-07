@@ -4,8 +4,8 @@ import {
     clearMessages
 } from "../chat_panel/chat-panel";
 
-import { Conversation, Prompt, Response, Message, isPrompt, isResponse } from "../../types";
-import { initConversations, createChat } from "../../server";
+import { Conversation, isPrompt, isResponse } from "../../types";
+import { fetchConversations, createChat } from "../../server";
 
 
 let currentConversationIndex = 0;
@@ -16,7 +16,7 @@ export async function getCurrentConversationIndex() {
 
 async function appendChatLabel(title: string, index: number) {
     const conversationList = document.querySelector(
-        ".conversation-list"
+        ".chat-list"
     ) as HTMLElement;
     const label = document.createElement("label");
     label.textContent = `${index + 1}. ${title}`;
@@ -36,19 +36,22 @@ async function appendChatLabel(title: string, index: number) {
     });
 
     label.addEventListener("click", async () => {
+        Array.from(conversationList.children).at(currentConversationIndex)?.classList.remove('selected');
+
         currentConversationIndex = Array.from(conversationList.children).indexOf(
             label
         );
         await clearMessages();
         // await fillChats(await initConversations(), false);
-        await fillMessages(await initConversations(), currentConversationIndex);
+        await fillMessages(await fetchConversations(), currentConversationIndex);
         console.log("index: ", currentConversationIndex);
+        label.classList.add('selected');
     });
 }
 
 export async function replaceConversationLabel(index: number, title: string) {
     const conversationList = document.querySelector(
-        ".conversation-list"
+        ".chat-list"
     ) as HTMLElement;
     const label = conversationList.children[index] as HTMLLabelElement;
     // console.log(title);
@@ -57,12 +60,12 @@ export async function replaceConversationLabel(index: number, title: string) {
 
 async function clearConversationLabels() {
     const conversationList = document.querySelector(
-        ".conversation-list"
+        ".chat-list"
     ) as HTMLElement;
     conversationList.innerHTML = "";
 }
 
-async function fillChats(chats: Conversation[] = [],
+export async function fillChats(chats: Conversation[] = [],
     appendChatLabels: boolean = false
 ): Promise<void> {
     
@@ -76,26 +79,11 @@ async function fillChats(chats: Conversation[] = [],
             );
         });
     }
-
-    // if (conversations.length === 0) {
-    //     statusLabel.style.display = "block";
-    //     console.error("No conversations found.");
-    //     statusLabel.textContent = "Your chats will appear in this panel";
-    // } else {
-    //     statusLabel.style.display = "none";
-    //     conversations[index_].messages.forEach((msg) => {
-    //         if (msg.role === "user") {
-    //             appendUserMessage(msg.text);
-    //         } else {
-    //             appendBotMessage(msg.text);
-    //         }
-    //     });
-    // }
 }
 
 
 
-async function fillMessages(conversations: Conversation[], index: number)
+export async function fillMessages(conversations: Conversation[], index: number)
 : Promise<void>
 {
     // const statusLabel = document.querySelector(
@@ -123,15 +111,15 @@ async function fillMessages(conversations: Conversation[], index: number)
     }
 }
 // Move event listener setup into a function
-function setupEventListener() {
+export function setupEventListener(title: string) {
     const submitButton = document.querySelector(
-        ".conversation-list-panel > button"
+        ".chat-list-panel > button"
     ) as HTMLButtonElement;
 
     submitButton.addEventListener("click", async () => {
-        let conversations = await initConversations();
-        const currentConversationIndex =
-            (await getCurrentConversationIndex()) as number;
+        let conversations = await fetchConversations();
+        // const currentConversationIndex =
+        //     (await getCurrentConversationIndex()) as number;
 
         for (const con of conversations) {
             if (con.messages.length === 0) {
@@ -141,7 +129,7 @@ function setupEventListener() {
         }
 
         // await createChat();
-        conversations = await createChat().then(await initConversations);
+        conversations = await createChat(title).then(await fetchConversations);
 
         await clearMessages().then(await clearConversationLabels);
         await fillChats(conversations, true);
@@ -149,9 +137,9 @@ function setupEventListener() {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", async () => {
-    const chats = await initConversations();
+// document.addEventListener("DOMContentLoaded", async () => {
+//     const chats = await initConversations();
 
-    await fillChats(chats, true);
-    await fillMessages(chats, 0).then(await setupEventListener);
-});
+//     await fillChats(chats, true);
+//     await fillMessages(chats, 0).then(await setupEventListener);
+// });

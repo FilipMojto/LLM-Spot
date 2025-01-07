@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from typing import List
 from datetime import datetime
 import uuid
@@ -8,15 +8,14 @@ from llmspot.models.base import Message
 
 class Conversation(BaseModel):
 	id: uuid.UUID = Field(default_factory=uuid.uuid4)
-	title: str
+	title: str = Field(min_length=1, max_length=10)
 	messages: List[Message] = Field(default_factory=list)
 	created_at: datetime = Field(default_factory=datetime.now, init=False)
 	updated_at: datetime = Field(default_factory=datetime.now, init=False)
 
-	def __setattr__(self, name, value):
-		super().__setattr__(name, value)
-		if name != 'updated_at':
-			super().__setattr__('updated_at', datetime.now())
+
+
+
 
 	def to_dict(self):
 		return {

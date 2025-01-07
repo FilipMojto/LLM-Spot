@@ -1,7 +1,27 @@
-.chat-editor .conversation-list-panel {
-    background-color: #2c2c2c;
+.chat-editor #toggle-chat-list-wrapper{
+    background-color: var(--second-layer-bg-color);
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    left: 0;
+    margin: 0;
+}
+
+#toggle-chat-list-wrapper:hover{
+    /* transform: scale(1.1); */
+    background-color:  var(--second-layer-bg-color-highlight);
+}
+
+
+.chat-editor .chat-list-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--second-layer-bg-color);
+    /* position: absolute; */
     /* width: 300px; */
-	width: fit-content;
+	min-width: fit-content;
     max-width: 15%;
     /* width: 100%; */
     max-height: 86vh;
@@ -9,14 +29,25 @@
     overflow: hidden;
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
-.conversation-list-panel > h4 {
+.chat-list-panel.clp-hidden{
+    /* clp stands for chat-list-panel */
+    display: none;
+    /* background-color: red; */
+}
+
+.chat-list-panel > .header{
+    /* is already flexed properly by using selector classes from llmspot.css */
+    /* this command prevents taking up more vertical space than necessary */
+    flex: 0; 
+    gap: 10px;
+    border-bottom: 2px solid #4a4a4a;
+    padding-bottom: 5px;
+}
+
+.chat-list-panel > h4 {
     color: #e0e0e0;
     font-size: 1.2rem;
     font-weight: bold;
@@ -25,7 +56,7 @@
   
 }
 
-.conversation-list > label {
+.chat-list > label {
     padding: 12px 16px;
     border-radius: 8px;
     color: #e0e0e0;
@@ -42,12 +73,12 @@
     box-sizing: border-box;  /* Prevents padding from affecting width */
 }
 
-.conversation-list {
+.chat-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
     flex: 1;
-    border-top: 2px solid #4a4a4a;
+    
     padding: 5px 0;
     overflow-y: auto;
     overflow-x: hidden;
@@ -55,11 +86,14 @@
     box-sizing: border-box;  /* Ensures padding/borders do not affect width */
 }
 
-.conversation-list > label:hover {
+.chat-list > label:hover {
     background-color: #3a3a3a;
     border-color: #4a4a4a;
-    transform: translateX(2px);
-    
+    transform: translateX(2px);   
+}
+
+.chat-list > label.selected{
+    background-color: #3a3a3a;
 }
 
 /* Custom scrollbar
@@ -81,7 +115,7 @@
     background: #5a5a5a;
 } */
 
-.conversation-list-panel > button{
+.chat-list-panel > button{
     background-color: #089a4a;
     color: #e0e0e0;
     border: 1px solid #4a4a4a;
@@ -94,14 +128,14 @@
     font-size: 14px;
 }
 
-.conversation-list-panel > button:hover {
+.chat-list-panel > button:hover {
     background-color: #03bd57;
     border-color: #4a4a4a;
     /* transform: translateX(2px); */
 }
 
 @media screen and (max-width: 768px) {
-    .conversation-list-panel {
+    .chat-list-panel {
         min-width: 100%;
     }
 }

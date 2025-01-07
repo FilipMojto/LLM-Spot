@@ -1,10 +1,18 @@
-from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from datetime import datetime
-from typing import List
-from pydantic import BaseModel, Field
+from typing import List, ClassVar
+from typing_extensions import Self
+from pydantic import BaseModel, Field, model_validator
+import logging
+
 
 from llmspot.models.constants import *
+
+logger = logging.getLogger(__name__)
+
+class BadPromptError(Exception):
+    def __init__(self, *args):
+        super().__init__(*args)
 
 
 class Message(BaseModel):
@@ -12,6 +20,10 @@ class Message(BaseModel):
     role: str
     created_at: datetime = Field(default_factory=datetime.now, init=False)
     updated_at: datetime = Field(default_factory=datetime.now, init=False)
+
+    class Config:
+        validate_assignment = True
+
 
     def __setattr__(self, name, value):
         super().__setattr__(name, value)
@@ -40,10 +52,24 @@ class Prompt(Message):
     instruct: str
     max_tokens: int
     output: str = Field(default=None)
-    context: str = Field(default="Default Context")
-    random: float = Field(default=0.7)
-    vary_words: float = Field(default=1.0)
-    repeat: float = Field(default=0.0)
+    context: str = Field(default=DEF_CONTEXT)
+    random: float = Field(default=DEF_RANDOMNESS)
+    vary_words: float = Field(default=DEF_WORD_VARIETY)
+    repeat: float = Field(default=DEF_REPETITIVENESS)
+    
+    @model_validator(mode='after')
+    def validate_fields(self) -> Self:
+        if not MIN_RANDOMNESS <= self.random <= MAX_RANDOMNESS:
+            raise BadPromptError(f"'random' must be between {MIN_RANDOMNESS} and {MAX_RANDOMNESS}.")
+        
+        if not MIN_WORD_VARIETY <= self.vary_words <= MAX_WORD_VARIETY:
+            raise BadPromptError(f"'vary_words' must be between {MIN_WORD_VARIETY} and {MAX_WORD_VARIETY}.")
+        
+        if not MIN_REPETITIVENESS <= self.repeat <= MAX_REPETITIVENESS:
+            raise BadPromptError(f"'repeat' must be between {MIN_REPETITIVENESS} and {MAX_REPETITIVENESS}.")
+        
+        return self
+    
 
     def to_dict(self) -> dict:
         """
@@ -60,6 +86,19 @@ class Prompt(Message):
             "repeat": self.repeat
         })
         return data
+    
+class OpenAIPrompt(Prompt):
+    
+    MAX_OUTPUT_TOKENS: ClassVar[int] = 4096
+
+    @model_validator(mode='after')
+
+    def validate_fields(self) -> Self:
+        if self.max_tokens > OpenAIPrompt.MAX_OUTPUT_TOKENS:
+            raise BadPromptError(f"Maximum amount of output tokens {OpenAIPrompt.MAX_OUTPUT_TOKENS} exceeded.")
+        
+        return self
+
 
 class LLM:
      ...

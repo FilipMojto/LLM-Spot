@@ -8,15 +8,26 @@ from llmspot.models.base import LLM, Response, Prompt
 
 
 class OpenAIWrapper(LLM):
-	# MODELS = ['gpt-4o', 'gpt-4o-mini', 'gpt-3.5-turbo', 'dall-e-3']
+	MODELS = ["gpt-4-turbo",
+    "gpt-4-1106-preview",
+    "gpt-3.5-turbo",
+    "gpt-3.5-turbo-0125",
+    "gpt-3.5-turbo-instruct",
+    "gpt-3.5-turbo-16k",
+    "gpt-4-0125-preview",
+    "gpt-4-turbo-preview",
+    "chatgpt-4o-latest",
+    "gpt-3.5-turbo-1106",
+    "gpt-3.5-turbo-instruct-0914",
+    "gpt-4",
+    "gpt-4-0613",
+    "gpt-4-turbo-2024-04-09"]
 
 
 	def __init__(self, api_key: str, verify_key: bool = True):
 		super().__init__()
-# from openai.types import Model
 		self.client = OpenAI(api_key=api_key)
-		OpenAIWrapper.MODELS = [model.id for model in self.client.models.list()]
-		
+	
 		if verify_key:
 			self.is_key_valid(throw_error=True)
 
@@ -91,11 +102,7 @@ class OpenAIWrapper(LLM):
 		return Response(chunks=[response.choices[0].message.content],
 						role=response.choices[0].message.role,
 						model=prompt.model)
-	
-	# def generate_text_stream(self, model: str, max_tokens: int, command: str,
-	# 							   randomness: float = 1, word_variety: float = LLM.DEF_WORD_VARIETY,
-	# 							   repetitivness: float = LLM.DEF_REPETITIVENESS,
-	# 								output: str = None, context: str = LLM.DEF_CONTEXT):
+
 	def generate_text_stream(self, prompt):
 		
 		"""
@@ -135,9 +142,6 @@ class OpenAIWrapper(LLM):
 			stream=True
 		)
 
-		# for chunk in response_stream:
-		# 	choices = 
-
 		chunks: List[str] = []
 
 		for chunk in response_stream:
@@ -152,58 +156,3 @@ class OpenAIWrapper(LLM):
 		yield Response(chunks=chunks,
 				  role="assistant",
 				  model=prompt.model)
-
-
-if __name__ == "__main__":
-	from dotenv import load_dotenv
-	from os import getenv
-	from pathlib import Path
-	import openai
-
-	# Load .env from parent directory
-	env_path = Path(__file__).parent.parent / '.env'
-	load_dotenv(dotenv_path=env_path)
-	
-	try:
-		openai_wrapper = OpenAIWrapper(api_key=getenv("OPENAI_API_KEY"))
-		# print(openai_wrapper.generate_text(command="Hello, how are you?", model="gpt-3.5-turbo", max_tokens=100000, temperature=0.5))
-		# print(openai_wrapper.is_key_valid())
-		models = openai.models.list()
-		
-		for model in models:
-			print(model)
-
-		# for chunk in openai_wrapper.generate_text_stream(Prompt(model="gpt-4o-mini", max_tokens=100, random=0.5, instruct="Explain how nerual networks work.")):
-		# 	print(chunk)
-		# 	# print(chunk.choices[0].delta.content)
-		# 	print("****************")
-
-		# response = openai_wrapper.client.chat.completions.create(
-		# 	messages=[
-		# 		{
-		# 			"role": "user",
-		# 			"content": "Explain how nerual networks work.",
-		# 		}
-		# 	],
-		# 	model="gpt-4o-mini",
-		# 	stream=True
-		# )
-
-		# for chunk in response:
-		# 	# print(chunk)
-		# 	print(chunk.choices[0].delta.content)
-		# 	print("****************")
-		# from openai.types import Model
-	
-		# for model in models:
-		# 	print(model.__repr__())
-
-
-	except openai.BadRequestError as e:
-		# print(e)
-		# print(e.message)
-		# print(e.code)
-		# print(e.status_code)
-		raise e
-
-

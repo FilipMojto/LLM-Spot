@@ -34,9 +34,9 @@ export async function fetchConversations(): Promise<Conversation[]> {
   }
 }
 
-export async function createChat(): Promise<Conversation | null> {
+export async function createChat(title: string): Promise<Conversation | null> {
 	try {
-		const response = await fetch("http://127.0.0.1:5000/chats/create", {
+		const response = await fetch(`http://127.0.0.1:5000/chats/create/${title}`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 		});
@@ -52,23 +52,23 @@ export async function createChat(): Promise<Conversation | null> {
 	}
 }
 
-export async function initConversations(): Promise<Conversation[]> {
-  try {
-	// Try to fetch existing conversations
-	const conversations = await fetchConversations();
-	console.log(conversations);
-	// If no conversations exist, create a new one
-	if (!conversations || conversations.length === 0) {
-	  const newConversation = await createChat();
-	  return newConversation ? [newConversation] : [];
-	}
+// export async function initConversations(): Promise<Conversation[]> {
+//   try {
+// 	// Try to fetch existing conversations
+// 	const conversations = await fetchConversations();
+// 	console.log(conversations);
+// 	// If no conversations exist, create a new one
+// 	if (!conversations || conversations.length === 0) {
+// 	  const newConversation = await createChat();
+// 	  return newConversation ? [newConversation] : [];
+// 	}
 
-	return conversations;
-  } catch (error) {
-	console.error("Error initializing conversations:", error);
-	return [];
-  }
-}
+// 	return conversations;
+//   } catch (error) {
+// 	console.error("Error initializing conversations:", error);
+// 	return [];
+//   }
+// }
 
 export async function generateText(conversation_id: string,
 	prompt: string,

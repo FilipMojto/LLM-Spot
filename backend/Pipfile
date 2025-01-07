@@ -13,6 +13,7 @@ anthropic = ">=0.42.0"
 [dev-packages]
 requests = ">=2.32.3"
 setuptools = ">=75.7.0"
+ipykernel = ">=6.29.5"
 
 [requires]
 python_version = "3.12"
